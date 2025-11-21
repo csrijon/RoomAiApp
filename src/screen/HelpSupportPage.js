@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     color: "#1A1D21",
-    marginBottom: 12,
+    marginBottom: 20,
     marginTop:25
   },
 
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.08,
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 2 },
-    marginBottom: 18,
+    marginBottom: 25,
   },
   searchInput: {
     flex: 1,
