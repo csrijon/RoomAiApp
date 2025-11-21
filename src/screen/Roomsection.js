@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, FlatList,ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../components/Button.js";
 import RoomCard from "../components/RoomCard.js"
@@ -19,28 +19,28 @@ const data = [
         date2: "2023-08-28",
         image: require("../images/appbed.webp"),
     },
-     {
+    {
         id: 2,
         title: "Bedroom Design",
         date1: "2023-09-30",
         date2: "2023-08-28",
         image: require("../images/appbed.webp"),
     },
-     {
+    {
         id: 2,
         title: "Bedroom Design",
         date1: "2023-09-30",
         date2: "2023-08-28",
         image: require("../images/appbed.webp"),
     },
-     {
+    {
         id: 2,
         title: "Bedroom Design",
         date1: "2023-09-30",
         date2: "2023-08-28",
         image: require("../images/appbed.webp"),
     },
-     {
+    {
         id: 2,
         title: "Bedroom Design",
         date1: "2023-09-30",
@@ -54,44 +54,44 @@ const Roomsection = () => {
     return (
         <SafeAreaView style={styles.container} >
             <ScrollView>
-            <View style={styles.semiconatiner} >
-                <View>
-                    <Image style={styles.img} source={require("../images/logoweb.png")} />
+                <View style={styles.semiconatiner} >
+                    <View>
+                        <Image style={styles.img} source={require("../images/logoweb.png")} />
+                    </View>
+                    <View>
+                        <Text style={styles.FirstText} >
+                            RoomAI Designer
+                        </Text>
+                        <Text style={styles.Secendtext} >
+                            Statements By Stellar Fumrsnings
+                        </Text>
+                    </View>
                 </View>
-                <View>
-                    <Text style={styles.FirstText} >
-                        RoomAI Designer
-                    </Text>
-                    <Text style={styles.Secendtext} >
-                        Statements By Stellar Fumrsnings
-                    </Text>
+                <View style={styles.middlecontainer} >
+                    <Text style={styles.thirdtext} >My Room Scenes</Text>
                 </View>
-            </View>
-            <View style={styles.middlecontainer} >
-                <Text style={styles.thirdtext} >My Room Scenes</Text>
-            </View>
-            <View style={styles.buttoncontainer} >
-                <Button name="sofa" date="Room Type" />
-                <Button name="calendar" date="Date" />
-            </View>
-            {/* <View> */}
-            <FlatList
-                data={data}
-                keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => (
-                    <RoomCard
-                        title={item.title}
-                        date1={item.date1}
-                        date2={item.date2}
-                        image={item.image}
-                    />
-                )}
-                contentContainerStyle={{
-                    paddingHorizontal: 15,
-                    paddingBottom: 20,
-                }}
-            />
-</ScrollView>
+                <View style={styles.buttoncontainer} >
+                    <Button name="sofa" date="Room Type" />
+                    <Button name="calendar" date="Date" />
+                </View>
+                {/* <View> */}
+                <FlatList
+                    data={data}
+                    keyExtractor={item => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <RoomCard
+                            title={item.title}
+                            date1={item.date1}
+                            date2={item.date2}
+                            image={item.image}
+                        />
+                    )}
+                    contentContainerStyle={{
+                        paddingHorizontal: 10,
+                        paddingBottom: 20,
+                    }}
+                />
+            </ScrollView>
             {/* </View> */}
         </SafeAreaView>
     )
