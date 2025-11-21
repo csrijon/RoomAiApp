@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#1A1D21",
     marginBottom: 12,
+    marginTop:25
   },
 
   // SEARCH
@@ -251,9 +252,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#FFFFFF",
-    borderRadius: 16,
+    borderRadius: 12,
     paddingHorizontal: 14,
-    paddingVertical: 10,
+    paddingVertical: 8,
     elevation: 3,
     shadowColor: "#000",
     shadowOpacity: 0.08,
