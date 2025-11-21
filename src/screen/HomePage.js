@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   featureCard: {
     flexDirection: "row",
     padding: 16,
-    borderRadius: 18,
+    borderRadius: 12,
     backgroundColor: "#FFFFFF",
     alignItems: "center",
     shadowColor: "#000",
