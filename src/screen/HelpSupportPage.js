@@ -179,12 +179,12 @@ const HelpSupportPage = () => {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    // backgroundColor: "#101820", 
+    backgroundColor: "#101820", 
     
   },
   root: {
     flex: 1,
-    backgroundColor: "#34589fff",
+    backgroundColor: "#101820",
     overflow: "hidden",
   },
 
@@ -228,10 +228,15 @@ const styles = StyleSheet.create({
 
   body: {
     flex: 1,
-    // backgroundColor: "#F4F5F7",
+    backgroundColor: "#F4F5F7",
     paddingHorizontal: 16,
     paddingTop: 14,
-    borderTopLeftRadius:70
+    borderTopLeftRadius:40,
+    borderTopRightRadius:40,
+    borderTopWidth:2,
+    borderLeftWidth:1,
+    borderRightWidth:1,
+    borderColor:"#00C29B"
   },
 
   helpTitle: {
