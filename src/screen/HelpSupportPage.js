@@ -103,7 +103,7 @@ const HelpSupportPage = () => {
                             />
                             <View style={{ marginLeft: 10 }}>
                                 <Text style={styles.contactTitle}>Live Chat(Priority Support)</Text>
-                                <Text style={styles.contactSub}></Text>
+                                {/* <Text style={styles.contactSub}></Text> */}
                             </View>
                         </View>
                         <Ionicons name="chevron-forward" size={20} color="#C3C7D0" />
@@ -130,8 +130,8 @@ const HelpSupportPage = () => {
                         <View style={styles.contactLeft}>
                             <MaterialIcons name="call" size={22} color="#4B4F5C" />
                             <View style={{ marginLeft: 10 }}>
-                                <Text style={styles.contactTitle}>Call Us</Text>
-                                <Text style={styles.contactSub}>Mon–Fri 9 AM–6 PM</Text>
+                                <Text style={styles.contactTitle}>Call Us(Mon–Fri 9 AM–6 PM)</Text>
+                                {/* <Text style={styles.contactSub}></Text> */}
                             </View>
                         </View>
                     </View>
@@ -321,20 +321,20 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "tansparent",
         borderRadius: 16,
         paddingVertical: 12,
         paddingHorizontal: 14,
         marginBottom: 10,
-        elevation: 2,
-        shadowColor: "#000",
-        shadowOpacity: 0.06,
-        shadowRadius: 4,
-        shadowOffset: { width: 0, height: 1 },
+        // elevation: 2,
+        // shadowColor: "#000",
+        // shadowOpacity: 0.06,
+        // shadowRadius: 4,
+        // shadowOffset: { width: 0, height: 1 },
     },
     contactLeft: {
         flexDirection: "row",
-        alignItems: "center",
+        // alignItems: "center",
     },
     contactTitle: {
         fontSize: 14,
