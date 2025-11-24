@@ -2,14 +2,16 @@
 // import { View, Text, } from "react-native";
 // import Roomsection from "./src/screen/Roomsection.js"
 // import HomePage from "./src/screen/HomePage.js"
-import HelpSupportPage from "./src/screen/HelpSupportPage.js"
+// import HelpSupportPage from "./src/screen/HelpSupportPage.js"
+import Subscrption from "./src/screen/Subscrption.js"
 
 const App = () => {
 
   return (
     //  <Roomsection/>
     // <HomePage />
-    <HelpSupportPage/>
+    // <HelpSupportPage/>
+    <Subscrption/>
   );
 };
 

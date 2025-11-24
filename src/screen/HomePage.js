@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../components/Header.js"
 
 const previewImages = [
   {
@@ -62,23 +63,7 @@ const HomePage = () => {
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#F4F5F7" />
       <View style={styles.root}>
-        {/* HEADER */}
-        <View style={styles.header}>
-          <View style={styles.headerLeft}>
-            <View style={styles.logoCircle}>
-              <Image style={styles.img} source={require("../images/logoweb.png")}   />
-            </View>
-            <View>
-              <Text style={styles.appName}>RoomAI Designer</Text>
-            </View>
-          </View>
-
-          <TouchableOpacity style={styles.menuButton}>
-            <View style={styles.menuLine} />
-            <View style={styles.menuLine} />
-            <View style={styles.menuLine} />
-          </TouchableOpacity>
-        </View>
+        <Header/>
 
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -142,52 +127,6 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: "#e6e7e8ff",
-  },
-  header: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 12,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor:"#ffffff"
-  },
-  headerLeft: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
-  logoCircle: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: "#E1F3FF",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  img:{
-     width:50,
-     height:50
-  },
-  logoText: {
-    fontSize: 18,
-  },
-  appName: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#1A1D21",
-  },
-  menuButton: {
-    width: 28,
-    justifyContent: "space-between",
-    alignItems: "flex-end",
-    height: 20,
-  },
-  menuLine: {
-    width: 22,
-    height: 2,
-    borderRadius: 2,
-    backgroundColor: "#1A1D21",
   },
 
   scrollContent: {
