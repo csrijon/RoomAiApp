@@ -27,16 +27,17 @@ const HelpSupportPage = () => {
                 {/* TOP BAR */}
                 <View style={styles.topBar}>
                     <View style={styles.logoWrap}>
-                        <View style={styles.logoCircle}>
-                            <Text style={styles.logoText}>RAI</Text>
-                        </View>
+                        {/* <View style={styles.logoCircle}> */}
+                            {/* <Text style={styles.logoText}>RAI</Text> */}
+                            <Image style={styles.logo} source={require("../images/logoweb.png")} />
+                        {/* </View> */}
                         <View style={{ marginLeft: 8 }}>
                             <Text style={styles.appName}>RoomAI Designer</Text>
                         </View>
                     </View>
 
                     <TouchableOpacity>
-                        <Ionicons name="ellipsis-vertical" size={22} color="#FFFFFF" />
+                        <Ionicons name="ellipsis-vertical" size={22} color="#00C29B" />
                     </TouchableOpacity>
                 </View>
 
@@ -99,7 +100,7 @@ const HelpSupportPage = () => {
                             <MaterialCommunityIcons
                                 name="message-text-outline"
                                 size={22}
-                                color="#00C29B"
+                                // color="#00C29B"
                             />
                             <View style={{ marginLeft: 10 }}>
                                 <Text style={styles.contactTitle}>Live Chat(Priority Support)</Text>
@@ -156,9 +157,10 @@ const HelpSupportPage = () => {
                     {/* COMPANY CARD */}
                     <View style={styles.card}>
                         <View style={styles.bottomLogo}>
-                            <View style={styles.bottomLogoCircle}>
-                                <Text style={styles.bottomLogoText}>RAI</Text>
-                            </View>
+                            {/* <View style={styles.bottomLogoCircle}> */}
+                                {/* <Text style={styles.bottomLogoText}>RAI</Text> */}
+                                <Image style={styles.logo} source={require("../images/logoweb.png")} />
+                            {/* </View> */}
                             <View style={{ marginLeft: 10 }}>
                                 <Text style={styles.cardTitle}>RoomAI Designer</Text>
                                 <Text style={styles.cardSub}>
@@ -204,19 +206,19 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
     },
-    logoCircle: {
-        width: 32,
-        height: 32,
-        borderRadius: 16,
-        backgroundColor: "#00C29B",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    logoText: {
-        color: "#FFFFFF",
-        fontWeight: "700",
-        fontSize: 12,
-    },
+    // logoCircle: {
+    //     width: 32,
+    //     height: 32,
+    //     borderRadius: 16,
+    //     backgroundColor: "#00C29B",
+    //     alignItems: "center",
+    //     justifyContent: "center",
+    // },
+    // logoText: {
+    //     color: "#FFFFFF",
+    //     fontWeight: "700",
+    //     fontSize: 12,
+    // },
     appName: {
         color: "#FFFFFF",
         fontSize: 14,
@@ -246,9 +248,13 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         color: "#1A1D21",
         marginBottom: 20,
-        marginTop: 25
+        marginTop: 15
     },
-
+    logo: {
+        width: 60,
+        height: 60,
+        resizeMode: 'contain',
+    },
     // SEARCH
     searchCard: {
         flexDirection: "row",
@@ -313,9 +319,8 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         color: "#1A1D21",
         marginBottom: 12,
-        marginTop:40
+        marginTop: 40
     },
-
     // CONTACT ROWS
     contactRow: {
         flexDirection: "row",
