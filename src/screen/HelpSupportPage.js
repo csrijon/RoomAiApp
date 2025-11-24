@@ -32,7 +32,6 @@ const HelpSupportPage = () => {
                         </View>
                         <View style={{ marginLeft: 8 }}>
                             <Text style={styles.appName}>RoomAI Designer</Text>
-                            <Text style={styles.stepText}>Step 1/4</Text>
                         </View>
                     </View>
 
@@ -103,8 +102,8 @@ const HelpSupportPage = () => {
                                 color="#00C29B"
                             />
                             <View style={{ marginLeft: 10 }}>
-                                <Text style={styles.contactTitle}>Live Chat</Text>
-                                <Text style={styles.contactSub}>Priority Support</Text>
+                                <Text style={styles.contactTitle}>Live Chat(Priority Support)</Text>
+                                <Text style={styles.contactSub}></Text>
                             </View>
                         </View>
                         <Ionicons name="chevron-forward" size={20} color="#C3C7D0" />
@@ -129,14 +128,13 @@ const HelpSupportPage = () => {
                     {/* Call Us */}
                     <View style={styles.contactRow}>
                         <View style={styles.contactLeft}>
-                            <MaterialIcons  name="call" size={22} color="#4B4F5C" />
+                            <MaterialIcons name="call" size={22} color="#4B4F5C" />
                             <View style={{ marginLeft: 10 }}>
                                 <Text style={styles.contactTitle}>Call Us</Text>
                                 <Text style={styles.contactSub}>Mon–Fri 9 AM–6 PM</Text>
                             </View>
                         </View>
                     </View>
-
                     {/* LOCATION CARD */}
                     <View style={styles.card}>
                         <View style={styles.mapThumbWrap}>
@@ -189,9 +187,9 @@ const styles = StyleSheet.create({
     },
     iconstyle: {
         padding: 15,
-        borderRadius:50,
-        borderColor:"#00C29B",
-        borderWidth:1
+        borderRadius: 50,
+        borderColor: "#00C29B",
+        borderWidth: 1
     },
     topBar: {
         backgroundColor: "#101820",
@@ -314,7 +312,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "600",
         color: "#1A1D21",
-        marginBottom: 10,
+        marginBottom: 12,
+        marginTop:40
     },
 
     // CONTACT ROWS

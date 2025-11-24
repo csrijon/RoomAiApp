@@ -5,12 +5,11 @@
 import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 
 const App = () => {
- 
 
   return (
-  //  <Roomsection/>
-  // <HomePage/>
-  <HelpSupportPage/>
+    //  <Roomsection/>
+    // <HomePage />
+    <HelpSupportPage/>
   );
 };
 
