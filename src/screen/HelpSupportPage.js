@@ -129,7 +129,7 @@ const HelpSupportPage = () => {
                     {/* Call Us */}
                     <View style={styles.contactRow}>
                         <View style={styles.contactLeft}>
-                            <MaterialIcons name="call" size={22} color="#4B4F5C" />
+                            <MaterialIcons name="call" size={22} color="#00C29B" />
                             <View style={{ marginLeft: 10 }}>
                                 <Text style={styles.contactTitle}>Call Us(Mon–Fri 9 AM–6 PM)</Text>
                                 {/* <Text style={styles.contactSub}></Text> */}
