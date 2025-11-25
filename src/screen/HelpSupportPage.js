@@ -44,6 +44,7 @@ const HelpSupportPage = () => {
                 {/* BODY */}
                 <ScrollView
                     style={styles.body}
+                    // eslint-disable-next-line react-native/no-inline-styles
                     contentContainerStyle={{ paddingBottom: 24 }}
                     showsVerticalScrollIndicator={false}
                 >
