@@ -155,8 +155,8 @@ const styles = StyleSheet.create({
   },
 
   featureIcon: {
-    width: 55,
-    height: 55,
+    width: 60,
+    height: 60,
     marginBottom: 8,
   },
 
