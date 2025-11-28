@@ -3,7 +3,9 @@
 // import Roomsection from "./src/screen/Roomsection.js"
 // import HomePage from "./src/screen/HomePage.js"
 // import HelpSupportPage from "./src/screen/HelpSupportPage.js"
-import Subscrption from "./src/screen/Subscrption.js"
+// import Subscrption from "./src/screen/Subscrption.js"
+import Roomsence from "./src/screen/Roomsence"
+
 
 const App = () => {
 
@@ -11,7 +13,8 @@ const App = () => {
     //  <Roomsection/>
     // <HomePage />
     // <HelpSupportPage/>
-    <Subscrption/>
+    // <Subscrption/>
+    <Roomsence/>
   );
 };
 
