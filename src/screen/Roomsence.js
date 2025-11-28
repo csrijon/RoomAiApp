@@ -47,25 +47,25 @@ const Roomsence = () => {
             <View style={styles.featuresRow}>
                 <View style={styles.featureItem}>
                     <Image
-                        source={require("../images/logoweb.png")}
+                        source={require("../images/scan.png")}
                         style={styles.featureIcon}
                     />
                     <Text style={styles.featureLabel}>Scan Your Room</Text>
                 </View>
 
                 <View style={styles.featureItem}>
-                    {/* <Image
-                        source={require("./assets/customize.png")}
+                    <Image
+                        source={require("../images/2nd logos.png")}
                         style={styles.featureIcon}
-                    /> */}
+                    />
                     <Text style={styles.featureLabel}>Customize{"\n"}Style & Furniture</Text>
                 </View>
 
                 <View style={styles.featureItem}>
-                    {/* <Image
-                        source={require("./assets/ar.png")}
+                    <Image
+                        source={require("../images/3rd logos.png")}
                         style={styles.featureIcon}
-                    /> */}
+                    />
                     <Text style={styles.featureLabel}>Visualize in{"\n"}3D & AR</Text>
                 </View>
             </View>
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
   featuresRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems:"center",
     width: "88%",
     marginTop: 80,
   },
