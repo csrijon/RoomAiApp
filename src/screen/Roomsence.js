@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from "react-native";
+import { View, Text, Image, StyleSheet,FlatList } from "react-native";
+import Icon from "../components/Icon.js"
 
 
 const previewImages = [
@@ -40,43 +41,7 @@ const Roomsence = () => {
                 style={{ marginTop: 20 }}
             />
 
-            {/* Tap To Explore */}
-            <Text style={styles.tapText}>Tap to Explore</Text>
-
-            {/* Features Row */}
-            <View style={styles.featuresRow}>
-                <View style={styles.featureItem}>
-                    <Image
-                        source={require("../images/scan.png")}
-                        style={styles.featureIcon}
-                    />
-                    <Text style={styles.featureLabel}>Scan Your Room</Text>
-                </View>
-
-                <View style={styles.featureItem}>
-                    <Image
-                        source={require("../images/2nd logos.png")}
-                        style={styles.featureIcon}
-                    />
-                    <Text style={styles.featureLabel}>Customize{"\n"}Style & Furniture</Text>
-                </View>
-
-                <View style={styles.featureItem}>
-                    <Image
-                        source={require("../images/3rd logos.png")}
-                        style={styles.featureIcon}
-                    />
-                    <Text style={styles.featureLabel}>Visualize in{"\n"}3D & AR</Text>
-                </View>
-            </View>
-
-            {/* CTA Button */}
-            <TouchableOpacity style={styles.ctaButton}>
-                <Text style={styles.ctaText}>Start Designing Your Space</Text>
-            </TouchableOpacity>
-
-            {/* Footer */}
-            <Text style={styles.footer}>Developed by Digital Edge 360 Consultancy</Text>
+       <Icon/>
         </View>
     )
 }
@@ -147,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems:"center",
     width: "88%",
-    marginTop: 80,
+    // marginTop: 80,
   },
 
   featureItem: {
