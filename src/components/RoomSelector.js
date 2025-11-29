@@ -7,7 +7,6 @@ const Rooms = [
     { id: 4, title: "Dining Room", img: require("../images/dining.jpeg"), selected: false }
 ]
 
-
 const RoomSelector = () => {
     return (
         <ScrollView horizontal style={styles.row}>
@@ -27,7 +26,7 @@ export default RoomSelector
 
 const styles = StyleSheet.create({
    row:{
-    flexDirection:"row",
+    // flexDirection:"row",
     marginTop:10
    }
 })
