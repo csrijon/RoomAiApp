@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity,  StyleSheet } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 
 
 const icon = () => {
@@ -24,9 +25,15 @@ const icon = () => {
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.btn}>
+            <LinearGradient
+                colors={["#79B4E1", "#A7E7C5"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={styles.btn}
+            >
                 <Text style={styles.btnText}>Start Designing Your Space</Text>
-            </TouchableOpacity>
+            </LinearGradient>
+
 
             <Text style={styles.footer}>Developed by Digital Edge 360 Consultancy</Text>
         </View>
@@ -71,16 +78,16 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         resizeMode: "contain",
     },
-   circle: {
-    width: 80,
-    height: 80,
-    borderWidth: 2,
-    borderColor: "gray",
-    borderRadius: 40,   
-    justifyContent: "center",
-    alignItems: "center",      
-}
-,
+    circle: {
+        width: 80,
+        height: 80,
+        borderWidth: 2,
+        borderColor: "gray",
+        borderRadius: 40,
+        justifyContent: "center",
+        alignItems: "center",
+    }
+    ,
     boxText: {
         fontSize: 12.5,
         fontWeight: "500",
@@ -93,7 +100,7 @@ const styles = StyleSheet.create({
         width: "100%",
         backgroundColor: "red",
         paddingVertical: 14,
-        paddingHorizontal:14,
+        paddingHorizontal: 14,
         borderRadius: 30,
         marginBottom: 10,
     },
