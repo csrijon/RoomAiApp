@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, ScrollView, } from "react-native"
 import RoomSelector from "../components/RoomSelector.js"
 import StyleSelector from "../components/StyleSelector.js"
 import Slider from '@react-native-community/slider';
+import PickColors from "../components/PickColors.js"
 
 const Tellmeus = () => {
     return (
@@ -34,6 +35,7 @@ const Tellmeus = () => {
                         />
                     </View>
                 </View>
+                <PickColors/>
             </ScrollView>
         </SafeAreaView>
     )

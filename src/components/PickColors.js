@@ -4,11 +4,11 @@ import LinearGradient from "react-native-linear-gradient";
 
 const colors = ["#E5E7EB", "#B5BBC5", "#A0A6AD", "#D3C9BB", "#B4926C"];
 const brandIcons = [
-  require("../icons/brand1.png"),
-  require("../icons/brand2.png"),
-  require("../icons/brand3.png"),
-  require("../icons/brand4.png"),
-  require("../icons/brand5.png")
+  require("../images/rawimage.png"),
+  require("../images/rawimage1.png"),
+  require("../images/rawimage2.png"),
+  require("../images/rawimage3.png"),
+  require("../images/rawimage4.png")
 ];
 
 const PickColors = () => {
@@ -85,7 +85,7 @@ export default PickColors;
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    paddingHorizontal: 15,
+    // paddingHorizontal: 15,
   },
 
   title: {
