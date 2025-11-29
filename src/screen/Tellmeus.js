@@ -1,7 +1,9 @@
 import { SafeAreaView } from "react-native-safe-area-context"
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native"
+import { View, Text, Image, StyleSheet, ScrollView, } from "react-native"
 import RoomSelector from "../components/RoomSelector.js"
 import StyleSelector from "../components/StyleSelector.js"
+import Slider from '@react-native-community/slider';
+
 const Tellmeus = () => {
     return (
         <SafeAreaView style={styles.mainsection} >
@@ -15,6 +17,23 @@ const Tellmeus = () => {
                 <Text style={styles.roomtext}  >What type a room is this ? </Text>
                 <RoomSelector />
                 <StyleSelector />
+                <View style={styles.budget} >
+                    <Text style={styles.budgettext} >Style & budget</Text>
+                    <Text style={styles.price} >$5000 - 1,000</Text>
+                    <View style={styles.seekbarsection} >
+                        <View style={styles.dollarcircle} >
+                            <Text>$</Text>
+                        </View>
+                        <Slider
+                            style={{ width: "90%", height: "40" }}
+                            minimumValue={0}
+                            maximumValue={500}
+                            maximumTrackTintColor="red"
+                            minimumTrackTintColor="green"
+                            thumbTintColor="blue"
+                        />
+                    </View>
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
@@ -48,5 +67,29 @@ const styles = StyleSheet.create({
     roomtext: {
         marginTop: 30
     },
+    budget: {
+        marginTop: 15
+    },
+    budgettext: {
+        fontSize: 17,
+        fontWeight: 500
+    },
+    seekbarsection:{
+        flexDirection:"row",
+        alignItems:"center",
+    },
+    dollarcircle: {
+    width: 30,          
+    height: 30,
+    borderWidth: 2,
+    borderColor: "black",
+    borderRadius: 25,  
+    justifyContent: "center", 
+    alignItems: "center",     
+},
+price:{
+    marginLeft:40,
+    marginTop:10
+}
 
 })
