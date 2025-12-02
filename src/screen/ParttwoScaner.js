@@ -1,14 +1,13 @@
 import SecendHeader from "../components/SecendHeader.js"
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StyleSheet,View } from "react-native";
-import { Text } from "react-native/types_generated/index";
-import { Color } from "react-native/types_generated/Libraries/Animated/AnimatedExports";
+import { StyleSheet,View,Text } from "react-native";
+
 
 const ParttwoScaner =()=>{
     return(
      <SafeAreaView style={styles.PartScaner} >
         <SecendHeader/>
-        <View><Text style={{Color:"black"}} >Living Room Project</Text></View>
+        <View><Text style={styles.boldtext} >Living Room Project</Text></View>
      </SafeAreaView>
     )
 }
@@ -19,5 +18,8 @@ const styles =StyleSheet.create({
     PartScaner:{
         flex:1,
         backgroundColor:"#ffffff"
+    },
+    boldtext:{
+        color:"#040404ff"
     }
 })
