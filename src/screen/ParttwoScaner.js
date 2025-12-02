@@ -1,12 +1,13 @@
-import Header from "../components/Header"
+import SecendHeader from "../components/SecendHeader.js"
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const ParttwoScaner =()=>{
     return(
-     <SafeAreaView>
-        <Header/>
+     <SafeAreaView  >
+        <SecendHeader/>
      </SafeAreaView>
     )
 }
 
 export default ParttwoScaner
+

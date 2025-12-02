@@ -6,7 +6,8 @@
 // import Subscrption from "./src/screen/Subscrption.js"
 // import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
-import ReviewPage from "./src/screen/ReviewPage.js"
+// import ReviewPage from "./src/screen/ReviewPage.js"
+import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
     // <Subscrption/>
     // <Roomsence/>
     // <Tellmeus/>
-    <ReviewPage/>
+    // <ReviewPage/>
+    <ParttwoScaner/>
   );
 };
 
