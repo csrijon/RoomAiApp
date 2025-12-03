@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 const colors = ["#E5E7EB", "#B5BBC5", "#A0A6AD", "#D3C9BB", "#B4926C"];
@@ -20,40 +20,42 @@ const PickColors = () => {
 
       {/* Title */}
       <Text style={styles.title}>Pick colors & materials</Text>
-
-      {/* Color Row */}
-      <View style={styles.colorRow}>
-        {colors.map((c, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => setSelectedColor(index)}
-            style={[
-              styles.colorBox,
-              { backgroundColor: c },
-              selectedColor === index && styles.colorSelected
-            ]}
-          />
-        ))}
-      </View>
+      <ScrollView horizontal style={{ flexDirection: "row" }} >
+        {/* Color Row */}
+        <View style={styles.colorRow}>
+          {colors.map((c, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => setSelectedColor(index)}
+              style={[
+                styles.colorBox,
+                { backgroundColor: c },
+                selectedColor === index && styles.colorSelected
+              ]}
+            />
+          ))}
+        </View>
+        <View style={styles.iconRow}>
+          {brandIcons.map((icon, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => setSelectedBrand(index)}
+              style={[
+                styles.iconWrapper,
+                selectedBrand === index && styles.iconSelected
+              ]}
+            >
+              <Image source={icon} style={styles.iconImage} />
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
 
       {/* Favorite Brands */}
       <Text style={styles.subText}>Favorite Brands <Text style={styles.optional}>(optional)</Text></Text>
 
       {/* Brand Icons Row */}
-      <View style={styles.iconRow}>
-        {brandIcons.map((icon, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => setSelectedBrand(index)}
-            style={[
-              styles.iconWrapper,
-              selectedBrand === index && styles.iconSelected
-            ]}
-          >
-            <Image source={icon} style={styles.iconImage} />
-          </TouchableOpacity>
-        ))}
-      </View>
+
 
       {/* Prompt Preview Card */}
       <View style={styles.cardPreview}>
