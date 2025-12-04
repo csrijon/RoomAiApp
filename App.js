@@ -7,7 +7,8 @@
 // import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
 // import ReviewPage from "./src/screen/ReviewPage.js"
-import ParttwoScaner from "./src/screen/ParttwoScaner.js"
+// import ParttwoScaner from "./src/screen/ParttwoScaner.js"
+import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
 
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
     // <Roomsence/>
     // <Tellmeus/>
     // <ReviewPage/>
-    <ParttwoScaner/>
+    // <ParttwoScaner/>
+    <ScanerLoader/>
   );
 };
 
