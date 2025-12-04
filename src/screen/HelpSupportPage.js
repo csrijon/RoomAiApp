@@ -15,6 +15,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import ThirdHeader from "../components/ThirdHeader.js"
 
 const HelpSupportPage = () => {
     const [emailToggle, setEmailToggle] = useState(false);
@@ -24,7 +25,7 @@ const HelpSupportPage = () => {
             <StatusBar barStyle="light-content" backgroundColor="#101820" />
 
             <View style={styles.root}>
-                <View style={styles.topBar}>
+                {/* <View style={styles.topBar}>
                     <View style={styles.logoWrap}>
                             <Image style={styles.logo} source={require("../images/logoweb.png")} />
                         <View style={{ marginLeft: 8 }}>
@@ -35,7 +36,8 @@ const HelpSupportPage = () => {
                     <TouchableOpacity>
                         <Ionicons name="ellipsis-vertical" size={22} color="#00C29B" />
                     </TouchableOpacity>
-                </View>
+                </View> */}
+                <ThirdHeader/>
 
                 {/* BODY */}
                 <ScrollView
@@ -299,8 +301,8 @@ const styles = StyleSheet.create({
 
     // SECTION TITLE
     sectionTitle: {
-        fontSize: 16,
-        fontWeight: "600",
+        fontSize: 17,
+        fontWeight: "500",
         color: "#1A1D21",
         marginBottom: 12,
         marginTop: 40

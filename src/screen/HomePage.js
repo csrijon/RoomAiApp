@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
   },
   featureIcon: {
     fontSize: 22,
+    justifyContent:"center"
   },
   featureTextWrap: {
     flex: 1,

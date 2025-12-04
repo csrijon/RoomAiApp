@@ -1,7 +1,8 @@
-import { ScrollView, FlatList, View, Text, StyleSheet } from "react-native"
+import {FlatList, View, Text, StyleSheet } from "react-native"
 import Header from "../components/Header.js"
 import { SafeAreaView } from "react-native-safe-area-context";
 import PlanCard from "../components/PlanCard.js"
+import Footer from "../components/Footer.js";
 
 const plans = [
   {
@@ -64,9 +65,10 @@ const Subscrption = () => {
       </View>
 
       <View style={styles.subcard} >
-        <Text> FAQ</Text>
+        <Text style={styles.boldsubtext} > FAQ</Text>
         <Text>hello i am srijonchowdhury i am from ghatal paschim medinipur</Text>
       </View>
+      <Footer />
 
     </SafeAreaView>
   )
@@ -96,8 +98,14 @@ const styles = StyleSheet.create({
   },
   subcard:{
     width:"90%",
-    backgroundColor:"red",
+    backgroundColor:"#ffffff",
     padding:10,
-    margin:"auto"
+    margin:"auto",
+    borderRadius:10,
+    gap:10,
+  },
+  boldsubtext:{
+    fontSize:16,
+    fontWeight:"600"
   }
 })
