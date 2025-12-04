@@ -5,9 +5,9 @@
 // import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 // import Subscrption from "./src/screen/Subscrption.js"
 // import Roomsence from "./src/screen/Roomsence"
-import Tellmeus from "./src/screen/Tellmeus"
+// import Tellmeus from "./src/screen/Tellmeus"
 // import ReviewPage from "./src/screen/ReviewPage.js"
-// import ParttwoScaner from "./src/screen/ParttwoScaner.js"
+import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 
 
 const App = () => {
@@ -18,9 +18,9 @@ const App = () => {
     // <HelpSupportPage/>
     // <Subscrption/>
     // <Roomsence/>
-    <Tellmeus/>
+    // <Tellmeus/>
     // <ReviewPage/>
-    // <ParttwoScaner/>
+    <ParttwoScaner/>
   );
 };
 
