@@ -24,13 +24,9 @@ const HelpSupportPage = () => {
             <StatusBar barStyle="light-content" backgroundColor="#101820" />
 
             <View style={styles.root}>
-                {/* TOP BAR */}
                 <View style={styles.topBar}>
                     <View style={styles.logoWrap}>
-                        {/* <View style={styles.logoCircle}> */}
-                            {/* <Text style={styles.logoText}>RAI</Text> */}
                             <Image style={styles.logo} source={require("../images/logoweb.png")} />
-                        {/* </View> */}
                         <View style={{ marginLeft: 8 }}>
                             <Text style={styles.appName}>RoomAI Designer</Text>
                         </View>
@@ -207,19 +203,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
     },
-    // logoCircle: {
-    //     width: 32,
-    //     height: 32,
-    //     borderRadius: 16,
-    //     backgroundColor: "#00C29B",
-    //     alignItems: "center",
-    //     justifyContent: "center",
-    // },
-    // logoText: {
-    //     color: "#FFFFFF",
-    //     fontWeight: "700",
-    //     fontSize: 12,
-    // },
     appName: {
         color: "#FFFFFF",
         fontSize: 14,
