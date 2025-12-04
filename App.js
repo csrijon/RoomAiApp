@@ -4,9 +4,9 @@
 // import HomePage from "./src/screen/HomePage.js"
 // import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 // import Subscrption from "./src/screen/Subscrption.js"
-import Roomsence from "./src/screen/Roomsence"
+// import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
-// import ReviewPage from "./src/screen/ReviewPage.js"
+import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
 // import Mainscanerpage from "./src/screen/MainScanerpage.js"
@@ -19,9 +19,9 @@ const App = () => {
     // <HomePage />
     // <HelpSupportPage/>
     // <Subscrption/>
-    <Roomsence/>
+    // <Roomsence/>
     // <Tellmeus/>
-    // <ReviewPage/>
+    <ReviewPage/>
     // <ParttwoScaner/>
     // <ScanerLoader/>
     // <Mainscanerpage/>
