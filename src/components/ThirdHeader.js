@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+
     },
     logoWrap: {
         flexDirection: "row",
@@ -39,4 +40,10 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "600",
     },
+       logo: {
+        width: 60,
+        height: 60,
+        resizeMode: 'contain',
+    },
+    
 })

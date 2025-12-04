@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     middlecontainer: {
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 10
+        paddingTop: 8
     },
     thirdtext: {
         fontSize: 16,
