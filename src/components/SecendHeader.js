@@ -17,7 +17,8 @@ export default SecendHeader
 const styles = StyleSheet.create({
        reviewheader: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        paddingHorizontal:15
     },
     boldtext: {
         fontSize: 17,

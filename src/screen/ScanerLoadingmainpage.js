@@ -16,5 +16,6 @@ const styles = StyleSheet.create({
     mainscaner: {
         flex: 1,
         backgroundColor: "#ffffff"
+        
     }
 })
