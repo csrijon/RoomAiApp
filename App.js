@@ -65,15 +65,15 @@ const TabsScreen = () => {
           tabBarInactiveTintColor: "#6e6e6e",
         }}
         name="New Scan" component={Mainscanerpage} />
-      <Tab.Screen 
-      options={{
-        tabBarIcon: ({ color, size }) => (
-           <Ionicons name="settings-outline" size={size} color={color} />
-        ),
-        tabBarActiveTintColor: "#23bddbff",
-        tabBarInactiveTintColor: "#6e6e6e",
-      }}
-      name="Setting" component={HelpSupportPage} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings-outline" size={size} color={color} />
+          ),
+          tabBarActiveTintColor: "#23bddbff",
+          tabBarInactiveTintColor: "#6e6e6e",
+        }}
+        name="Setting" component={HelpSupportPage} />
     </Tab.Navigator>
   );
 };
