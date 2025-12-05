@@ -18,7 +18,7 @@ export default Button
 const styles = StyleSheet.create({
     button: {
         borderWidth: 2,
-        borderColor: "#36a2e7",
+        borderColor: "#1A8EF9",
         paddingVertical: 10,
         paddingHorizontal: 15,
         borderRadius: 30,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         tintColor: "#6e6e6e",
     },
     text: {
-        color: "#36a2e7",
+        color: "#1A8EF9",
         fontWeight: "500",
     },
 

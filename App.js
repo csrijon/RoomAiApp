@@ -38,7 +38,7 @@ const TabsScreen = () => {
     <Tab.Navigator screenOptions={{
       headerShown: false,
       tabBarStyle: {
-        height: 70, paddingBottom: 10
+        height: 70, paddingBottom: 10,paddingTop:10,
       }
     }}>
 
@@ -50,7 +50,7 @@ const TabsScreen = () => {
           tabBarIcon: ({ color, size }) => (
             <Icon name="home" size={size} color={color} />
           ),
-          tabBarActiveTintColor: "#1A8EF9",
+          tabBarActiveTintColor: "#648DDB",
           tabBarInactiveTintColor: "#6e6e6e",
         }}
       />
@@ -61,7 +61,7 @@ const TabsScreen = () => {
         tabBarIcon: ({ color, size }) => (
           <Icon name="grid" size={size} color={color} />
         ),
-        tabBarActiveTintColor: "#1A8EF9",
+        tabBarActiveTintColor: "#648DDB",
         tabBarInactiveTintColor: "#6e6e6e",
       }}
         name="My Rooms" component={Roomsence} />
@@ -89,7 +89,7 @@ const TabsScreen = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="scan-outline" size={size} color={color} />
           ),
-          tabBarActiveTintColor: "#1A8EF9",
+          tabBarActiveTintColor: "#648DDB",
           tabBarInactiveTintColor: "#6e6e6e",
         }}
         name="New Scan" component={Mainscanerpage} />
@@ -100,7 +100,7 @@ const TabsScreen = () => {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings-outline" size={size} color={color} />
           ),
-          tabBarActiveTintColor: "#1A8EF9",
+          tabBarActiveTintColor: "#648DDB",
           tabBarInactiveTintColor: "#6e6e6e",
         }}
         name="Setting" component={HelpSupportPage} />
@@ -130,7 +130,7 @@ export default App;
 
 const styles = StyleSheet.create({
   tabbariconbackground: {
-    backgroundColor: "#1A8EF9",
+    backgroundColor: "#648DDB",
     width: 50,
     height: 50,
     borderRadius: 25,
