@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
 // import { View, Text, } from "react-native";
-// import Roomsection from "./src/screen/Roomsection.js"
+import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
 // import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 // import Subscrption from "./src/screen/Subscrption.js"
@@ -12,21 +12,27 @@ import HomePage from "./src/screen/HomePage.js"
 // import Mainscanerpage from "./src/screen/MainScanerpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const Stacksscreen = () => {
   return (
     <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }} >
       <Stack.Screen name="Home" component={HomePage} />
+      <Stack.Screen name="Roomsection"  component={Roomsection} />
     </Stack.Navigator>
   )
 }
+
+
+
 const App = () => {
 
   return (
     <NavigationContainer>
-      <Stacksscreen/>
+      <Stacksscreen />
     </NavigationContainer>
   );
 };
