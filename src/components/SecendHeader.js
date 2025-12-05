@@ -1,4 +1,4 @@
-import { View,Image,Text,StyleSheet } from "react-native"
+import { View, Image, Text, StyleSheet } from "react-native"
 
 
 const SecendHeader = () => {
@@ -15,7 +15,7 @@ const SecendHeader = () => {
 export default SecendHeader
 
 const styles = StyleSheet.create({
-       reviewheader: {
+    reviewheader: {
         flexDirection: "row",
         alignItems: "center",
     },

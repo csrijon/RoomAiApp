@@ -21,7 +21,7 @@ const App = () => {
     // <Subscrption/>
     // <Roomsence/>
     // <Tellmeus/>
-    <ReviewPage/>
+    <ReviewPage />
     // <ParttwoScaner/>
     // <ScanerLoader/>
     // <Mainscanerpage/>
