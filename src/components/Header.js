@@ -1,6 +1,8 @@
 
 import { View,Text,Image,TouchableOpacity, StyleSheet } from "react-native"
+import { useNavigation } from '@react-navigation/native';
 const Header = () => {
+  const navigation = useNavigation();
     return (
         <View style={styles.header}>
             <View style={styles.headerLeft}>
@@ -12,7 +14,7 @@ const Header = () => {
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.menuButton}>
+            <TouchableOpacity onPress={()=>navigation.openDrawer()} style={styles.menuButton}>
                 <View style={styles.menuLine} />
                 <View style={styles.menuLine} />
                 <View style={styles.menuLine} />

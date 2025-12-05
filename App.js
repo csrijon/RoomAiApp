@@ -4,12 +4,12 @@ import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
 import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 // import Subscrption from "./src/screen/Subscrption.js"
-// import Roomsence from "./src/screen/Roomsence"
+import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
 // import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
-// import Mainscanerpage from "./src/screen/MainScanerpage.js"
+import Mainscanerpage from "./src/screen/MainScanerpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -20,12 +20,12 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
-const StackScreen = () => {
+
+const Stacksscreen = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Tabs" component={TabsScreen} />
-      <Stack.Screen name="Drawer" component={DrawerScreen} />
-      <Stack.Screen name="Roomsection" component={Roomsection} />
+      <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
+      <Stack.Screen name="TabsScreen" component={TabsScreen} />
     </Stack.Navigator>
   );
 };
@@ -34,28 +34,24 @@ const TabsScreen = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Home"
-        component={HomePage}
-        options={{
-          tabBarIcon: ({ color, size }) => {
-            return null; // add icon here
-          }
-        }}
+        name="RoomTab"
+        component={Roomsection}
       />
-
-      <Tab.Screen name="Roomsection" component={Roomsection} />
+      <Tab.Screen name="My Rooms" component={Roomsence} />
+      <Tab.Screen name="New Scan" component={Mainscanerpage} />
+      <Tab.Screen name="Setting" component={HelpSupportPage} />
     </Tab.Navigator>
   );
 };
 
 const DrawerScreen = () => {
   return (
-    <Drawer.Navigator screenOptions={{ headerShown: false }}>
+    <Drawer.Navigator screenOptions={{ headerShown: false }} >
       <Drawer.Screen name="Home" component={HomePage} />
-      <Drawer.Screen name="HelpSupport" component={HelpSupportPage} />
+      <Drawer.Screen name="Setting" component={HelpSupportPage} />
     </Drawer.Navigator>
-  );
-};
+  )
+}
 
 
 
@@ -63,7 +59,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <StackScreen />
+      <Stacksscreen />
     </NavigationContainer>
   );
 };

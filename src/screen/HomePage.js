@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header.js"
+import { Screen } from "react-native-screens";
 
 const previewImages = [
   {
@@ -58,12 +59,12 @@ const features = [
   },
 ];
 
-const HomePage = ({navigation}) => {
+const HomePage = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#F4F5F7" />
       <View style={styles.root}>
-        <Header/>
+        <Header />
 
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -110,7 +111,7 @@ const HomePage = ({navigation}) => {
           </View>
 
           {/* BOTTOM BUTTON */}
-          <TouchableOpacity onPress={()=> navigation.navigate("Roomsection")} style={styles.ctaButton}>
+          <TouchableOpacity onPress={() => navigation.navigate("TabsScreen", { Screen: "RoomTab" })} style={styles.ctaButton}>
             <Text style={styles.ctaText}>Start Designing Your Space</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -203,7 +204,7 @@ const styles = StyleSheet.create({
   },
   featureIcon: {
     fontSize: 22,
-    justifyContent:"center"
+    justifyContent: "center"
   },
   featureTextWrap: {
     flex: 1,
