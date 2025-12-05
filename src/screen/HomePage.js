@@ -11,7 +11,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/Header.js"
-import { Screen } from "react-native-screens";
+import { useEffect } from "react";
+import LinearGradient from "react-native-linear-gradient";
+
+
 
 const previewImages = [
   {
@@ -60,9 +63,12 @@ const features = [
 ];
 
 const HomePage = ({ navigation }) => {
+  useEffect(()=>{
+    // changeNavigationBarColor("#e6e7e8ff");
+  },[])
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="dark-content" backgroundColor="#F4F5F7" />
+      <StatusBar  barStyle="dark-content" backgroundColor="#ffffff"/>
       <View style={styles.root}>
         <Header />
 
@@ -111,8 +117,15 @@ const HomePage = ({ navigation }) => {
           </View>
 
           {/* BOTTOM BUTTON */}
-          <TouchableOpacity onPress={() => navigation.navigate("TabsScreen", { Screen: "RoomTab" })} style={styles.ctaButton}>
+          <TouchableOpacity onPress={() => navigation.navigate("TabsScreen", { Screen: "RoomTab" })} >
+             <LinearGradient
+    colors={["#84A9FF", "#A8E8C6"]}
+    start={{ x: 0, y: 0 }}
+    end={{ x: 1, y: 0 }}
+    style={styles.ctaButton}
+  >
             <Text style={styles.ctaText}>Start Designing Your Space</Text>
+            </LinearGradient>
           </TouchableOpacity>
         </ScrollView>
       </View>
@@ -123,11 +136,11 @@ const HomePage = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#4159a3ff",
+    // backgroundColor: "#4159a3ff",
   },
   root: {
     flex: 1,
-    backgroundColor: "#e6e7e8ff",
+    // backgroundColor: "#e6e7e8ff",
   },
 
   scrollContent: {
@@ -231,11 +244,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#3A8DF5",
   },
-  ctaText: {
-    fontSize: 15,
-    fontWeight: "600",
-    color: "#FFFFFF",
-  },
+ ctaText: {
+  fontSize: 16,     
+  fontWeight: "600",
+  color: "#FFFFFF",
+},
+
 });
 
 export default HomePage;

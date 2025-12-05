@@ -1,11 +1,11 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
 
 const Header = () => {
   const navigation = useNavigation();
   return (
-    <View style={styles.header}>
-      
+    <View style={[styles.header]}>
       <View style={styles.headerLeft}>
         <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.logoCircle}>
           <Image style={styles.logoImg} source={require("../images/logoweb.png")} />
