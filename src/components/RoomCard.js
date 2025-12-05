@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const RoomCard = ({ title, date1, date2, image }) => {
@@ -25,24 +25,24 @@ const RoomCard = ({ title, date1, date2, image }) => {
 
         {/* Bottom Icons */}
         <View style={styles.bottomRow}>
-          <View style={styles.bottomItem}>
+          <TouchableOpacity style={styles.bottomItem}>
             <Icon name="pencil" size={18} color="#6e6e6e" />
             <Text style={styles.bottomText}>Edit</Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.bottomItem}>
+          <TouchableOpacity style={styles.bottomItem}>
             <Icon name="video" size={18} color="#6e6e6e" />
             <Text style={styles.bottomText}>Revisualize</Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.bottomItem}>
+          <TouchableOpacity style={styles.bottomItem}>
             <Icon name="share" size={18} color="#6e6e6e" />
             <Text style={styles.bottomText}>Share</Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.bottomItem}>
+          <TouchableOpacity style={styles.bottomItemlast}>
             <Icon name="delete" size={18} color="#6e6e6e" />
-          </View>
+          </TouchableOpacity>
         </View>
 
       </View>
@@ -105,9 +105,15 @@ const styles = StyleSheet.create({
   bottomItem: {
     alignItems: "center",
     justifyContent:"center"
-    
   },
-
+  bottomItemlast:{
+    alignItems: "center",
+    justifyContent:"center",
+    width:30,
+    height:30,
+    borderRadius:50,
+    backgroundColor:"#f0f0f0"
+  },
   bottomText: {
     fontSize: 10,
     color: "#6e6e6e",

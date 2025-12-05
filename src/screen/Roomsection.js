@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, FlatList, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList, ScrollView,StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../components/Button.js";
 import RoomCard from "../components/RoomCard.js"
@@ -53,6 +53,7 @@ const data = [
 const Roomsection = () => {
     return (
         <SafeAreaView style={styles.container} >
+            <StatusBar barStyle="dark-content" backgroundColor="#fff" />
             <ScrollView>
                 <View style={styles.semiconatiner} >
                     <View>
@@ -77,6 +78,7 @@ const Roomsection = () => {
                 {/* <View> */}
                 <FlatList
                     data={data}
+                    style={{ backgroundColor: "#f4f4f4",paddingHorizontal:5 }}
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => (
                         <RoomCard
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
     semiconatiner: {
         flexDirection: "row",
         alignItems: "center",
-        padding: 10
+        // padding: 10
     },
     img: {
         height: 80,
@@ -124,17 +126,19 @@ const styles = StyleSheet.create({
     middlecontainer: {
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 8
+        marginVertical: 10,
+        // backgroundColor:"#f4f4f4"
     },
     thirdtext: {
-        fontSize: 16,
-        fontWeight: "600"
+        fontSize: 17,
+        fontWeight: "500"
     },
     buttoncontainer: {
         flexDirection: "row",
         justifyContent: "center",
-        marginTop: 30,
-        gap: 10
+        paddingVertical: 10,
+        gap: 10,
+        backgroundColor:"#f4f4f4"
     }
 
 })

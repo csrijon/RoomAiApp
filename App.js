@@ -3,7 +3,7 @@
 import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
 import HelpSupportPage from "./src/screen/HelpSupportPage.js"
-// import Subscrption from "./src/screen/Subscrption.js"
+import Subscrption from "./src/screen/Subscrption.js"
 import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
 // import ReviewPage from "./src/screen/ReviewPage.js"
@@ -16,6 +16,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { StyleSheet, View } from "react-native"
 
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +41,8 @@ const TabsScreen = () => {
         height: 70, paddingBottom: 10
       }
     }}>
+
+
       <Tab.Screen
         name="RoomTab"
         component={Roomsection}
@@ -51,6 +54,9 @@ const TabsScreen = () => {
           tabBarInactiveTintColor: "#6e6e6e",
         }}
       />
+
+
+
       <Tab.Screen options={{
         tabBarIcon: ({ color, size }) => (
           <Icon name="grid" size={size} color={color} />
@@ -58,8 +64,26 @@ const TabsScreen = () => {
         tabBarActiveTintColor: "#23bddbff",
         tabBarInactiveTintColor: "#6e6e6e",
       }}
-
         name="My Rooms" component={Roomsence} />
+
+      <Tab.Screen
+
+        options={{
+          tabBarIcon: ({  size }) => (
+            <View style={styles.tabbariconbackground} >
+              <Icon name="plus" size={size} color="#fff" />
+            </View>
+          ),
+          tabBarLabel: "",
+          tabBarActiveTintColor: "#ffffff",
+          tabBarInactiveTintColor: "#ffffff",
+
+        }}
+        name="ProTab" component={Subscrption} >
+
+      </Tab.Screen>
+
+
       <Tab.Screen
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -69,6 +93,8 @@ const TabsScreen = () => {
           tabBarInactiveTintColor: "#6e6e6e",
         }}
         name="New Scan" component={Mainscanerpage} />
+
+
       <Tab.Screen
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -101,3 +127,15 @@ const App = () => {
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+  tabbariconbackground: {
+    backgroundColor: "#19a8d4ff",
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 15,
+  }
+})
