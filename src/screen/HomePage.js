@@ -58,7 +58,7 @@ const features = [
   },
 ];
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#F4F5F7" />
@@ -110,7 +110,7 @@ const HomePage = () => {
           </View>
 
           {/* BOTTOM BUTTON */}
-          <TouchableOpacity style={styles.ctaButton}>
+          <TouchableOpacity onPress={()=> navigation.navigate("Roomsection")} style={styles.ctaButton}>
             <Text style={styles.ctaText}>Start Designing Your Space</Text>
           </TouchableOpacity>
         </ScrollView>

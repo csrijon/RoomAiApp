@@ -12,19 +12,35 @@ import HomePage from "./src/screen/HomePage.js"
 // import Mainscanerpage from "./src/screen/MainScanerpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Stacksscreen = () => {
   return (
-    <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }} >
-      <Stack.Screen name="Home" component={HomePage} />
-      <Stack.Screen name="Roomsection"  component={Roomsection} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="TabsScreen" component={TabsScreen} />
+      <Stack.Screen name="Roomsection" component={Roomsection} />
     </Stack.Navigator>
-  )
-}
+  );
+};
+
+const TabsScreen = () => {
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen
+        name="Home"
+        component={HomePage}
+        options={{
+          tabBarIcon:
+        }}
+
+      />
+      <Tab.Screen name="Roomsection" component={Roomsection} />
+    </Tab.Navigator>
+  );
+};
 
 
 
