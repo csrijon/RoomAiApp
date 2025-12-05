@@ -2,7 +2,7 @@
 // import { View, Text, } from "react-native";
 import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
-// import HelpSupportPage from "./src/screen/HelpSupportPage.js"
+import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 // import Subscrption from "./src/screen/Subscrption.js"
 // import Roomsence from "./src/screen/Roomsence"
 // import Tellmeus from "./src/screen/Tellmeus"
@@ -13,14 +13,18 @@ import HomePage from "./src/screen/HomePage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
-const Stacksscreen = () => {
+const StackScreen = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="TabsScreen" component={TabsScreen} />
+      <Stack.Screen name="Tabs" component={TabsScreen} />
+      <Stack.Screen name="Drawer" component={DrawerScreen} />
       <Stack.Screen name="Roomsection" component={Roomsection} />
     </Stack.Navigator>
   );
@@ -33,12 +37,23 @@ const TabsScreen = () => {
         name="Home"
         component={HomePage}
         options={{
-          tabBarIcon:
+          tabBarIcon: ({ color, size }) => {
+            return null; // add icon here
+          }
         }}
-
       />
+
       <Tab.Screen name="Roomsection" component={Roomsection} />
     </Tab.Navigator>
+  );
+};
+
+const DrawerScreen = () => {
+  return (
+    <Drawer.Navigator screenOptions={{ headerShown: false }}>
+      <Drawer.Screen name="Home" component={HomePage} />
+      <Drawer.Screen name="HelpSupport" component={HelpSupportPage} />
+    </Drawer.Navigator>
   );
 };
 
@@ -48,7 +63,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stacksscreen />
+      <StackScreen />
     </NavigationContainer>
   );
 };
