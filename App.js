@@ -14,6 +14,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -36,10 +39,41 @@ const TabsScreen = () => {
       <Tab.Screen
         name="RoomTab"
         component={Roomsection}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" size={size} color={color} />
+          ),
+          tabBarActiveTintColor: "#23bddbff",
+          tabBarInactiveTintColor: "#6e6e6e",
+        }}
       />
-      <Tab.Screen name="My Rooms" component={Roomsence} />
-      <Tab.Screen name="New Scan" component={Mainscanerpage} />
-      <Tab.Screen name="Setting" component={HelpSupportPage} />
+      <Tab.Screen options={{
+        tabBarIcon: ({ color, size }) => (
+          <Icon name="grid" size={size} color={color} />
+        ),
+        tabBarActiveTintColor: "#23bddbff",
+        tabBarInactiveTintColor: "#6e6e6e",
+      }}
+
+        name="My Rooms" component={Roomsence} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="scan-outline" size={size} color={color} />
+          ),
+          tabBarActiveTintColor: "#23bddbff",
+          tabBarInactiveTintColor: "#6e6e6e",
+        }}
+        name="New Scan" component={Mainscanerpage} />
+      <Tab.Screen 
+      options={{
+        tabBarIcon: ({ color, size }) => (
+           <Ionicons name="settings-outline" size={size} color={color} />
+        ),
+        tabBarActiveTintColor: "#23bddbff",
+        tabBarInactiveTintColor: "#6e6e6e",
+      }}
+      name="Setting" component={HelpSupportPage} />
     </Tab.Navigator>
   );
 };
