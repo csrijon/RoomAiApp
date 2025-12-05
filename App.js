@@ -18,7 +18,6 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -86,8 +85,6 @@ const DrawerScreen = () => {
     </Drawer.Navigator>
   )
 }
-
-
 
 const App = () => {
 
