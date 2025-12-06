@@ -9,6 +9,8 @@ import Roomsence from "./src/screen/Roomsence"
 // import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
+import LoginScreen from "./src/screen/LoginScreen.js"
+import SignUpScreen from "./src/screen/SignUpScreen.js"
 import SetNewPassword from "./src/screen/SetNewPassword.js"
 import PasswordReset from "./src/screen/PasswordReset.js"
 import Forgetpage from "./src/screen/Forgetpage.js"
@@ -31,6 +33,8 @@ const Drawer = createDrawerNavigator();
 const Stacksscreen = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="Forgetpage" component={Forgetpage} />
       <Stack.Screen name="CheckyourEmail" component={CheckyourEmail} />
       <Stack.Screen name="PasswordReset" component={PasswordReset} />

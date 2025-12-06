@@ -1,0 +1,220 @@
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  StatusBar,
+  Image
+} from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+
+
+const LoginScreen = ({ navigation }) => {
+  return (
+    <SafeAreaView style={styles.container}>
+        <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
+      {/* Email Label */}
+      <Text style={styles.label}>Your Email</Text>
+
+      {/* Email Input */}
+      <View style={styles.inputRow}>
+        <TextInput
+          style={styles.input}
+          placeholder="csrijon92@gmail.com"
+          placeholderTextColor="#B3B3B3"
+          keyboardType="email-address"
+        />
+      </View>
+
+      {/* Password Label */}
+      <Text style={styles.label}>Password</Text>
+
+      {/* Password Input With Error (Red Border) */}
+      <View style={[styles.inputRow, styles.errorInput]}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your password"
+          placeholderTextColor="#B3B3B3"
+          secureTextEntry={true}
+        />
+        <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+      </View>
+
+      {/* Wrong Password + Forgot */}
+      <View style={styles.rowBetween}>
+        <Text style={styles.errorText}>Wrong password</Text>
+
+        <TouchableOpacity>
+          <Text style={styles.forgotText}>Forgot password?</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Continue Button */}
+      <TouchableOpacity style={styles.continueBtn}>
+        <Text style={styles.continueText}>Continue</Text>
+      </TouchableOpacity>
+
+      {/* OR Divider */}
+      <View style={styles.orContainer}>
+        <View style={styles.line} />
+        <Text style={styles.orText}>Or</Text>
+        <View style={styles.line} />
+      </View>
+
+      {/* Login with Apple */}
+      <TouchableOpacity style={styles.socialBtn}>
+        <FontAwesome name="apple" size={22} color="#000" />
+        <Text style={styles.socialText}>Login with Apple</Text>
+      </TouchableOpacity>
+
+      {/* Login with Google */}
+      <TouchableOpacity style={styles.socialBtn}>
+        {/* <FontAwesome name="google" size={22} color="#DB4437" /> */}
+        <Image style={{width:24,height:24}} source={require("../images/gogolelogo.png")} />
+        <Text style={styles.socialText}>Login with Google</Text>
+      </TouchableOpacity>
+
+      {/* Sign Up */}
+      <View style={styles.signupContainer}>
+        <Text style={styles.signupText}>Don’t have an account?</Text>
+        <TouchableOpacity>
+          <Text style={styles.signupLink}> Sign up</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default LoginScreen;
+
+
+
+// ---------------------- STYLES ------------------------
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    paddingTop: 20,
+    paddingHorizontal: 20,
+  },
+
+  label: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#000",
+    marginBottom: 8,
+    marginTop: 10,
+  },
+
+  inputRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#E5E5E5",
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    height: 50,
+    marginBottom: 15,
+  },
+
+  errorInput: {
+    borderColor: "#E5E5E5",
+  },
+
+  input: {
+    flex: 1,
+    fontSize: 16,
+    color: "#000",
+  },
+
+  rowBetween: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: -10,
+    marginBottom: 20,
+  },
+
+  errorText: {
+    color: "#D9D9D9",
+    fontSize: 13,
+  },
+
+  forgotText: {
+    color: "#3578E5",
+    fontSize: 13,
+    fontWeight: "500",
+  },
+
+  continueBtn: {
+    backgroundColor: "#648DDB",
+    paddingVertical: 15,
+    borderRadius: 12,
+    alignItems: "center",
+    marginBottom: 25,
+  },
+
+  continueText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+
+  orContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 25,
+  },
+
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "#DDDDDD",
+  },
+
+  orText: {
+    marginHorizontal: 10,
+    color: "#999",
+    fontSize: 14,
+  },
+
+  socialBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#E5E5E5",
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    marginBottom: 15,
+  },
+
+  socialText: {
+    fontSize: 15,
+    marginLeft: 10,
+    color: "#000",
+    fontWeight: "500",
+  },
+
+  signupContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 10,
+  },
+
+  signupText: {
+    color: "#999",
+    fontSize: 14,
+  },
+
+  signupLink: {
+    color: "#3578E5",
+    fontSize: 14,
+    fontWeight: "600",
+  },
+});

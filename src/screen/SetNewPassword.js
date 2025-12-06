@@ -13,6 +13,11 @@ const SetNewPassword = ({ navigation }) => {
 
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+    const handelscureTextEntryhandler = () => {
+        setSecureTextEntry(!secureTextEntry);
+    }
 
 
     return (
@@ -42,12 +47,15 @@ const SetNewPassword = ({ navigation }) => {
                     placeholder="Enter your new password"
                     placeholderTextColor="#B3B3B3"
                     maxLength={8}
-                    secureTextEntry={true}
+                    secureTextEntry={secureTextEntry}
                     onChangeText={(value) => {
                         setPassword(value)
                     }}
                 />
-                <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+                <TouchableOpacity onPress={handelscureTextEntryhandler} >
+                    <MaterialIcons name={secureTextEntry ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" />
+                </TouchableOpacity>
+
             </View>
 
             {/* Confirm Password Label */}
@@ -60,10 +68,15 @@ const SetNewPassword = ({ navigation }) => {
                     placeholder="Re-enter password"
                     placeholderTextColor="#B3B3B3"
                     maxLength={8}
-                    //   secureTextEntry={true}
+                    secureTextEntry={secureTextEntry}
                     onChangeText={(value) => { setConfirmPassword(value) }}
                 />
-                <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+                <TouchableOpacity onPress={handelscureTextEntryhandler} >
+                    <MaterialIcons
+                        name={secureTextEntry ? "visibility-off" : "visibility"}
+                        size={22}
+                        color="#B3B3B3" />
+                </TouchableOpacity>
             </View>
 
             {/* Update Button */}
