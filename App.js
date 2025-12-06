@@ -10,6 +10,7 @@ import Roomsence from "./src/screen/Roomsence"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
 import Forgetpage from "./src/screen/Forgetpage.js"
+import CheckyourEmail from "./src/screen/CheckyourEmail.js"
 import Mainscanerpage from "./src/screen/MainScanerpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -29,6 +30,7 @@ const Stacksscreen = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Forgetpage" component={Forgetpage} />
+      <Stack.Screen name="CheckyourEmail" component={CheckyourEmail} />
       <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
     </Stack.Navigator>
@@ -40,7 +42,7 @@ const TabsScreen = () => {
     <Tab.Navigator screenOptions={{
       headerShown: false,
       tabBarStyle: {
-        height: 70, paddingBottom: 10,paddingTop:10,
+        height: 70, paddingBottom: 10, paddingTop: 10,
       }
     }}>
 
@@ -71,7 +73,7 @@ const TabsScreen = () => {
       <Tab.Screen
 
         options={{
-          tabBarIcon: ({  size }) => (
+          tabBarIcon: ({ size }) => (
             <View style={styles.tabbariconbackground} >
               <Icon name="plus" size={size} color="#fff" />
             </View>

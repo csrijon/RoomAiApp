@@ -1,12 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar } from "react-native";
+import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar, Alert } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const Forgetpage = () => {
+const Forgetpage = ({ navigation }) => {
 
-    const [text, setText] = useState("");
-  
+  const [text, setText] = useState("");
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
@@ -29,12 +29,18 @@ const Forgetpage = () => {
         style={styles.input}
         placeholder="Enter your email"
         placeholderTextColor="#B3B3B3"
-        onChangeText={(Value)=>{setText(Value);
+        keyboardType="email-address"
+        preventDefault=""
+        onChangeText={(Value) => {
+          setText(Value);
         }}
       />
 
       {/* Button */}
-      <TouchableOpacity  style={[styles.button,text === "" ?{ backgroundColor: "#C9D9F8"}:{backgroundColor:"#648DDB"} ]}>
+      <TouchableOpacity
+        style={[styles.button, text === "" ? { backgroundColor: "#C9D9F8" } : { backgroundColor: "#648DDB" }]}
+        onPress={text === "" ? Alert.alert("Please enter your email") : () => { navigation.navigate("CheckyourEmail") }}
+      >
         <Text style={styles.buttonText}>Reset Password</Text>
       </TouchableOpacity>
     </SafeAreaView>
