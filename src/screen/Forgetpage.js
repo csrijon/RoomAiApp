@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar, Alert } from "react-native";
+import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar} from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Forgetpage = ({ navigation }) => {
@@ -39,7 +39,7 @@ const Forgetpage = ({ navigation }) => {
       {/* Button */}
       <TouchableOpacity
         style={[styles.button, text === "" ? { backgroundColor: "#C9D9F8" } : { backgroundColor: "#648DDB" }]}
-        onPress={text === "" ? Alert.alert("Please enter your email") : () => { navigation.navigate("CheckyourEmail") }}
+        onPress={text === "" ? {} : () => { navigation.navigate("CheckyourEmail") }}
       >
         <Text style={styles.buttonText}>Reset Password</Text>
       </TouchableOpacity>
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   button: {
     // backgroundColor: "#C9D9F8",
     paddingVertical: 15,
-    borderRadius: 10,
+    borderRadius: 12,
     alignItems: "center",
     marginTop: 10,
   },

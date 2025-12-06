@@ -3,17 +3,18 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import {
   Text,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  StatusBar
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const PasswordReset = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-
+    <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
       {/* Back Arrow */}
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-        <MaterialIcons name="chevron-left" size={24} color="#000" />
+        <MaterialIcons name="chevron-left" size={29} color="#000" />
       </TouchableOpacity>
 
       {/* Title */}
@@ -26,7 +27,10 @@ const PasswordReset = ({ navigation }) => {
       </Text>
 
       {/* Confirm Button */}
-      <TouchableOpacity style={styles.confirmBtn}>
+      <TouchableOpacity 
+      style={styles.confirmBtn}
+      onPress={()=>navigation.navigate("SetNewPassword")}
+      >
         <Text style={styles.confirmText}>Confirm</Text>
       </TouchableOpacity>
 
@@ -57,10 +61,12 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "700",
     color: "#000",
     marginBottom: 10,
+    lineHeight: 20,
+    lrterSpacing: 0.5,
   },
 
   description: {
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
   confirmBtn: {
     backgroundColor: "#648DDB",
     paddingVertical: 15,
-    borderRadius: 10,
+    borderRadius: 12,
     alignItems: "center",
   },
 

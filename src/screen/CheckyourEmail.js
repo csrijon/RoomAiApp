@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     verifyBtn: {
         backgroundColor: "#C9D9F8",
         paddingVertical: 15,
-        borderRadius: 10,
+        borderRadius: 12,
         alignItems: "center",
         marginBottom: 25,
     },
