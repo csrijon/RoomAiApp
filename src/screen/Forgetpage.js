@@ -1,18 +1,106 @@
-import { SafeAreaView,Text,Input,TouchableOpacity } from "react-native-safe-area-context";
-
+import React,{useState} from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar } from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Forgetpage = () => {
-    return(
-      <SafeAreaView>
-        <Text>Forgot Password</Text>
-        <Text>Please enter your email to reset the Password</Text>
-        <Text>Your Email</Text>
-        <Input placeholder="Enter your email" />
-        <TouchableOpacity>
-            <Text>Reset Password</Text>
-        </TouchableOpacity>
-      </SafeAreaView>
-    )
-}
+
+    const [text, setText] = useState("");
+  
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
+      <TouchableOpacity style={styles.backButton} >
+        <MaterialIcons name="chevron-left" size={29} color="#000" />
+      </TouchableOpacity>
+      {/* Title */}
+      <Text style={styles.title}>Forgot password</Text>
+
+      {/* Subtitle */}
+      <Text style={styles.subtitle}>
+        Please enter your email to reset the password
+      </Text>
+
+      {/* Label */}
+      <Text style={styles.label}>Your Email</Text>
+
+      {/* Input */}
+      <TextInput
+        style={styles.input}
+        placeholder="Enter your email"
+        placeholderTextColor="#B3B3B3"
+        onChangeText={(Value)=>{setText(Value);
+        }}
+      />
+
+      {/* Button */}
+      <TouchableOpacity  style={[styles.button,text === "" ?{ backgroundColor: "#C9D9F8"}:{backgroundColor:"#648DDB"} ]}>
+        <Text style={styles.buttonText}>Reset Password</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
 
 export default Forgetpage;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    backgroundColor: "#FFFFFF",
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#F2F2F2",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#1E1E1E",
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#989898",
+    marginBottom: 30,
+    fontWeight: "semibold",
+    letterSpacing: 0.5,
+    lineHeight: 20,
+  },
+  label: {
+    fontSize: 16,
+    color: "#2A2A2A",
+    marginBottom: 10,
+    fontWeight: "semibold",
+  },
+  input: {
+    width: "100%",
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#E5E5E5",
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    fontSize: 16,
+    marginBottom: 20,
+    backgroundColor: "#FFFFFF",
+    color: "#000000"
+  },
+  button: {
+    // backgroundColor: "#C9D9F8",
+    paddingVertical: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 10,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+});

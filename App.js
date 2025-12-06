@@ -9,6 +9,7 @@ import Roomsence from "./src/screen/Roomsence"
 // import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
+import Forgetpage from "./src/screen/Forgetpage.js"
 import Mainscanerpage from "./src/screen/MainScanerpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -27,6 +28,7 @@ const Drawer = createDrawerNavigator();
 const Stacksscreen = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Forgetpage" component={Forgetpage} />
       <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
     </Stack.Navigator>
