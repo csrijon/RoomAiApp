@@ -6,11 +6,12 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    StatusBar
+    StatusBar,
+    Alert
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const CheckyourEmail = ({navigation}) => {
+const CheckyourEmail = ({ navigation }) => {
 
     const [code, setCode] = useState(["", "", "", "", ""]);
 
@@ -21,14 +22,19 @@ const CheckyourEmail = ({navigation}) => {
         console.log(fullcode);
     }
 
+    const buttonhandeler = () => {
+        return code.every((item) => item !== "");
+    };
+
+
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
             {/* Back Button */}
-            <TouchableOpacity 
-            style={styles.backButton} 
-            onPress={()=>(navigation.goBack())}
-             >
+            <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => (navigation.goBack())}
+            >
                 <MaterialIcons name="chevron-left" size={29} color="#000" />
             </TouchableOpacity>
 
@@ -60,7 +66,15 @@ const CheckyourEmail = ({navigation}) => {
             </View>
 
             {/* Verify Button */}
-            <TouchableOpacity style={[styles.verifyBtn,code.every((item)=>item!=="")? { backgroundColor: "#648DDB" } : { backgroundColor: "#C9D9F8" }]}>
+            <TouchableOpacity
+                style={[styles.verifyBtn, buttonhandeler() ? { backgroundColor: "#648DDB" } : { backgroundColor: "#C9D9F8" }]}
+                onPress={() => {
+                    if (buttonhandeler()) {
+                        navigation.navigate("PasswordReset");
+                    }
+                }}
+
+            >
                 <Text style={styles.verifyText}>Verify Code</Text>
             </TouchableOpacity>
 

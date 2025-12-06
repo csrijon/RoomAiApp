@@ -9,6 +9,7 @@ import Roomsence from "./src/screen/Roomsence"
 // import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
 // import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
+import PasswordReset from "./src/screen/PasswordReset.js"
 import Forgetpage from "./src/screen/Forgetpage.js"
 import CheckyourEmail from "./src/screen/CheckyourEmail.js"
 import Mainscanerpage from "./src/screen/MainScanerpage.js"
@@ -31,6 +32,7 @@ const Stacksscreen = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Forgetpage" component={Forgetpage} />
       <Stack.Screen name="CheckyourEmail" component={CheckyourEmail} />
+      <Stack.Screen name="PasswordReset" component={PasswordReset} />
       <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
     </Stack.Navigator>
