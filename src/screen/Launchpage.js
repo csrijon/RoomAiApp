@@ -7,7 +7,7 @@ const Launchpage = () => {
             <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
 
             <View style={styles.content}>
-                <Image 
+                <Image
                     style={styles.logo}
                     source={require("../images/logoweb.png")}
                 />

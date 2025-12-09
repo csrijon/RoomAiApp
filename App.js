@@ -35,7 +35,7 @@ const Drawer = createDrawerNavigator();
 
 const Stacksscreen = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="SignUpScreen" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Launchpage" component={Launchpage} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
