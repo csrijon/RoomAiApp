@@ -1,7 +1,16 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Image, Text, StyleSheet, StatusBar } from "react-native";
+import { useEffect } from "react";
 
-const Launchpage = () => {
+const Launchpage = ({navigation}) => {
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            navigation.replace("SignUpScreen")
+        },1000)
+        clearTimeout();
+    })
+
     return (
         <SafeAreaView style={styles.mainlanuchview}>
             <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />

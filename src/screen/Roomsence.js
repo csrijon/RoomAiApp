@@ -9,7 +9,8 @@ const previewImages = [
     { id: 3, img: require("../images/3rd3.jpg") },
 ];
 
-const Roomsence = () => {
+const Roomsence = ({navigation}
+) => {
     return (
         <View style={styles.containers}>
 
@@ -41,7 +42,7 @@ const Roomsence = () => {
                 style={{ marginTop: 20 }}
             />
 
-       <Icon/>
+       <Icon navigation={navigation} />
         </View>
     )
 }

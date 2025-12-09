@@ -11,7 +11,7 @@ const brandIcons = [
   require("../images/rawimage4.png")
 ];
 
-const PickColors = () => {
+const PickColors = ({ navigation }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState(null);
 
@@ -69,15 +69,16 @@ const PickColors = () => {
       </View>
 
       {/* Gradient Button */}
-      <LinearGradient
-        colors={["#79B4E1", "#A7E7C5"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={styles.button}
-      >
-        <Text style={styles.btnText}>Generate Designs</Text>
-      </LinearGradient>
-
+      <TouchableOpacity onPress={() => navigation.navigate("ReviewPage")}  >
+        <LinearGradient
+          colors={["#79B4E1", "#A7E7C5"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.button}
+        >
+          <Text style={styles.btnText}>Generate Designs</Text>
+        </LinearGradient>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -86,7 +87,7 @@ export default PickColors;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: 10,
     // paddingHorizontal: 15,
   },
 
@@ -129,7 +130,6 @@ const styles = StyleSheet.create({
 
   iconRow: {
     flexDirection: "row",
-    marginBottom: 20,
   },
 
   iconWrapper: {

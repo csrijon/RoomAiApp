@@ -7,15 +7,8 @@ import SecendHeader from "../components/SecendHeader.js"
 const ReviewPage = () => {
     return (
         <SafeAreaView style={styles.reviewsection}  >
-            {/* <View style={styles.reviewheader} >
-                <Image source={require("../images/logoweb.png")} style={{ width: 70, height: 70 }} />
-                <View>
-                    <Text style={styles.boldtext} >Room AI Designer</Text>
-                    <Text>Statements By Srijonchowdhury</Text>
-                </View>
-            </View> */}
-            <SecendHeader/>
-            
+            <SecendHeader />
+
             <Text style={styles.reviewtext} >Review Your Space</Text>
 
             <Image style={styles.image} source={require("../images/roomview.png")} />
@@ -59,17 +52,17 @@ const styles = StyleSheet.create({
         resizeMode: "center",
         alignSelf: "center"
     },
-    button:{
-        paddingVertical:15,
-        paddingHorizontal:15,
-        backgroundColor:"#1E90FF",
-        alignItems:"center",
-        borderRadius:40,
+    button: {
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+        backgroundColor: "#1E90FF",
+        alignItems: "center",
+        borderRadius: 40,
     },
-    btntext:{
-        fontSize:17,
-        fontWeight:600,
-        color:"#ffffff"
+    btntext: {
+        fontSize: 17,
+        fontWeight: 600,
+        color: "#ffffff"
     }
 
 })

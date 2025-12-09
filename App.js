@@ -1,14 +1,15 @@
 // import React, { useState, useEffect } from "react";
 // import { View, Text, } from "react-native";
+
 import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
 import HelpSupportPage from "./src/screen/HelpSupportPage.js"
 import Subscrption from "./src/screen/Subscrption.js"
 import Roomsence from "./src/screen/Roomsence"
-// import Tellmeus from "./src/screen/Tellmeus"
-// import ReviewPage from "./src/screen/ReviewPage.js"
+import Tellmeus from "./src/screen/Tellmeus"
+import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
-// import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
+import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
 import LoginScreen from "./src/screen/LoginScreen.js"
 import SignUpScreen from "./src/screen/SignUpScreen.js"
 import SetNewPassword from "./src/screen/SetNewPassword.js"
@@ -35,7 +36,7 @@ const Drawer = createDrawerNavigator();
 
 const Stacksscreen = () => {
   return (
-    <Stack.Navigator initialRouteName="SignUpScreen" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="Launchpage" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Launchpage" component={Launchpage} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -45,7 +46,8 @@ const Stacksscreen = () => {
       <Stack.Screen name="SetNewPassword" component={SetNewPassword} />
       <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
-       {/* <Stack.Screen name="TopTabScreen" component={TopTabScreen} /> */}
+       <Stack.Screen name="Tellmeus" component={Tellmeus} />
+       <Stack.Screen name="ReviewPage" component={ReviewPage} />
     </Stack.Navigator>
   );
 };
@@ -109,7 +111,7 @@ const TabsScreen = () => {
           tabBarActiveTintColor: "#648DDB",
           tabBarInactiveTintColor: "#6e6e6e",
         }}
-        name="New Scan" component={Mainscanerpage} />
+        name="New Scan" component={ScanerLoader} />
 
 
       <Tab.Screen

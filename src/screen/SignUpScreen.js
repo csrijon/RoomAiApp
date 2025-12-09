@@ -68,7 +68,7 @@ const SignUpScreen = ({ navigation }) => {
       </View>
 
       {/* Create Account Button */}
-      <TouchableOpacity style={styles.createBtn}>
+      <TouchableOpacity  style={styles.createBtn}>
         <Text style={styles.createText}>Create Account</Text>
       </TouchableOpacity>
 

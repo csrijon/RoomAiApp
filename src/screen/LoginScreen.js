@@ -54,7 +54,7 @@ const LoginScreen = ({ navigation }) => {
       </View>
 
       {/* Continue Button */}
-      <TouchableOpacity style={styles.continueBtn}>
+      <TouchableOpacity onPress={()=>navigation.navigate("DrawerScreen")} style={styles.continueBtn}>
         <Text style={styles.continueText}>Continue</Text>
       </TouchableOpacity>
 

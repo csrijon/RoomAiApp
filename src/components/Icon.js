@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity,  StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 
-const icon = () => {
+const icon = ({ navigation }) => {
     return (
         <View style={styles.lastcontainer}>
             <Text style={styles.heading}>Tap to Explore</Text>
@@ -24,16 +24,18 @@ const icon = () => {
                     <Text style={styles.boxText}>Visualize in{"\n"}3D & AR</Text>
                 </View>
             </View>
+            <TouchableOpacity onPress={() => navigation.navigate("Tellmeus")} >
+                <LinearGradient
 
-            <LinearGradient
-                colors={["#79B4E1", "#A7E7C5"]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                style={styles.btn}
-            >
-                <Text style={styles.btnText}>Start Designing Your Space</Text>
-            </LinearGradient>
+                    colors={["#79B4E1", "#A7E7C5"]}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.btn}
+                >
+                    <Text style={styles.btnText}>Start Designing Your Space</Text>
 
+                </LinearGradient>
+            </TouchableOpacity>
 
             <Text style={styles.footer}>Developed by Digital Edge 360 Consultancy</Text>
         </View>

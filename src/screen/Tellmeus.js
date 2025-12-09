@@ -5,7 +5,7 @@ import StyleSelector from "../components/StyleSelector.js"
 import Slider from '@react-native-community/slider';
 import PickColors from "../components/PickColors.js"
 
-const Tellmeus = () => {
+const Tellmeus = ({navigation}) => {
     return (
         <SafeAreaView style={styles.mainsection} >
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -35,7 +35,7 @@ const Tellmeus = () => {
                         />
                     </View>
                 </View>
-                <PickColors/>
+                <PickColors navigation={navigation} />
             </ScrollView>
         </SafeAreaView>
     )
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontWeight: "500"
     },
     roomtext: {
-        marginTop: 30
+        marginTop: 20
     },
     budget: {
         marginTop: 15
