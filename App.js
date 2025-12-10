@@ -25,6 +25,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 // import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { StyleSheet, View } from "react-native"
 
 
@@ -106,12 +107,13 @@ const TabsScreen = () => {
       <Tab.Screen
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="scan-outline" size={size} color={color} />
+ <MaterialIcons name="workspace-premium" size={size} color={color} />
+
           ),
           tabBarActiveTintColor: "#648DDB",
           tabBarInactiveTintColor: "#6e6e6e",
         }}
-        name="New Scan" component={ScanerLoader} />
+        name="Subscription" component={Subscrption} />
 
 
       <Tab.Screen

@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context"
-import { View, Text, Image, StyleSheet, ScrollView, } from "react-native"
+import { View, Text, Image, StyleSheet, ScrollView,StatusBar } from "react-native"
 import RoomSelector from "../components/RoomSelector.js"
 import StyleSelector from "../components/StyleSelector.js"
 import Slider from '@react-native-community/slider';
@@ -8,6 +8,7 @@ import PickColors from "../components/PickColors.js"
 const Tellmeus = ({navigation}) => {
     return (
         <SafeAreaView style={styles.mainsection} >
+            <StatusBar barStyle="dark-content" backgroundColor="#fff" />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.firstsection}  >
                     <Image style={styles.images} source={require("../images/logoweb.png")} />

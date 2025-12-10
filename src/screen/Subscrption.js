@@ -1,8 +1,8 @@
-import {FlatList, View, Text, StyleSheet } from "react-native"
-import Header from "../components/Header.js"
+import { FlatList, View, Text, StyleSheet } from "react-native";
+import Header from "../components/Header.js";
 import { SafeAreaView } from "react-native-safe-area-context";
-import PlanCard from "../components/PlanCard.js"
-import Footer from "../components/Footer.js";
+import PlanCard from "../components/PlanCard.js";
+import { ScrollView, StatusBar } from "react-native";
 
 const plans = [
   {
@@ -24,7 +24,6 @@ const plans = [
       "Unlimited designs",
       "AR/VR Export",
       "Revit File Export",
-      "Revit File Export",
       "Priority Support",
     ],
     buttonText: "Upgrade Now",
@@ -35,11 +34,7 @@ const plans = [
     name: "Business",
     price: "29.99",
     per: "month",
-    features: [
-      "50 team members",
-      "PDF Report Export",
-      "BIM Export",
-    ],
+    features: ["50 team members", "PDF Report Export", "BIM Export"],
     buttonText: "Upgrade",
     recommended: false,
   },
@@ -47,65 +42,93 @@ const plans = [
 
 const Subscrption = () => {
   return (
-    <SafeAreaView style={styles.Subcontainer} >
-      <Header />
-      <View style={styles.topsection} >
-        <Text style={styles.firsttext} >Find Your Perfect Plan</Text>
-        <Text style={styles.secendtext} >Unlock Powerful AI design tools</Text>
-      </View>
-      <View style={styles.container}>
-        <FlatList
-          horizontal
-          data={plans}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <PlanCard item={item} />}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ paddingHorizontal: 12 }}
-        />
-      </View>
+    <SafeAreaView style={styles.Subcontainer}>
+      <StatusBar barStyle="dark-content" backgroundColor="#edeaeaff" />
+      <ScrollView vertical showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
+        <Header />
 
-      <View style={styles.subcard} >
-        <Text style={styles.boldsubtext} > FAQ</Text>
-        <Text>hello i am srijonchowdhury i am from ghatal paschim medinipur</Text>
-      </View>
-      <Footer />
+        <View style={styles.topsection}>
+          <Text style={styles.firsttext}>Find Your Perfect Plan</Text>
+          <Text style={styles.secondtext}>Unlock Powerful AI Design Tools</Text>
+        </View>
 
+        <View style={styles.cardContainer}>
+          <FlatList
+            horizontal
+            data={plans}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <PlanCard item={item} />}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 15 }}
+          />
+        </View>
+
+        <View style={styles.subcard}>
+          <Text style={styles.boldsubtext}>FAQ</Text>
+          <Text style={styles.faqText}>
+            hello i am srijon chowdhury, I am from Ghatal Paschim Medinipur
+          </Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
-  )
-}
-export default Subscrption
+  );
+};
 
+export default Subscrption;
 
 const styles = StyleSheet.create({
   Subcontainer: {
     flex: 1,
-    backgroundColor: "#edeaeaff"
+    backgroundColor: "#edeaeaff",
   },
-  container: {
-    marginTop: 10,
-  },
+
   topsection: {
-    marginVertical: 20,
+    marginTop: 15,
     alignItems: "center",
-    gap: 10
+    gap: 6,
   },
+
   firsttext: {
     fontSize: 22,
-    fontWeight: 600
+    fontWeight: "700",
+    color: "#333",
   },
-  secendtext: {
-    fontSize: 18
+
+  secondtext: {
+    fontSize: 16,
+    color: "#666",
   },
-  subcard:{
-    width:"90%",
-    backgroundColor:"#ffffff",
-    padding:10,
-    margin:"auto",
-    borderRadius:10,
-    gap:10,
+
+  cardContainer: {
+    marginTop: 15,
+    paddingBottom: 10,
   },
-  boldsubtext:{
-    fontSize:16,
-    fontWeight:"600"
-  }
-})
+
+  subcard: {
+    width: "90%",
+    backgroundColor: "#ffffff",
+    padding: 15,
+    alignSelf: "center",
+    borderRadius: 12,
+    marginTop: 25,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOpacity: 0.08,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    gap: 8,
+  },
+
+  boldsubtext: {
+    fontSize: 18,
+    fontWeight: "700",
+    marginBottom: 5,
+    color: "#333",
+  },
+
+  faqText: {
+    fontSize: 14,
+    color: "#555",
+    lineHeight: 20,
+  },
+});

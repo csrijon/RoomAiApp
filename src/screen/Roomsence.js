@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet,FlatList } from "react-native";
 import Icon from "../components/Icon.js"
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const previewImages = [
@@ -12,7 +13,7 @@ const previewImages = [
 const Roomsence = ({navigation}
 ) => {
     return (
-        <View style={styles.containers}>
+        <SafeAreaView style={styles.containers}>
 
             {/* Logo */}
             <Image
@@ -43,7 +44,7 @@ const Roomsence = ({navigation}
             />
 
        <Icon navigation={navigation} />
-        </View>
+        </SafeAreaView>
     )
 }
 
