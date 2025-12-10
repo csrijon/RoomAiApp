@@ -1,44 +1,73 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import SecendHeader from "../components/SecendHeader.js"
-// import ScanerLoaderCom from "../components/ScanerLoaderCom.js";
+import SecendHeader from "../components/SecendHeader.js";
 import LottieView from "lottie-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
 const ScanerLoadingmainpage = () => {
     return (
-        <SafeAreaView style={styles.mainscaner} >
+        <SafeAreaView style={styles.mainscaner}>
             <SecendHeader />
-            {/* <ScanerLoaderCom/> */}
-            <View style={styles.genpage} >
-                <Text style={styles.gentext} >Generating Your Dream Room</Text>
+
+            {/* Title */}
+            <View style={styles.genpage}>
+                <Text style={styles.gentext}>Generating Your Dream Room</Text>
             </View>
+
+            {/* Loader */}
             <LottieView
-                source={require("../images/loader.json")}
+                source={require("../images/secloader.json")}
                 autoPlay
                 loop
-                style={{ width: 2500, height: 250, alignSelf: "center", marginTop: 100 }}
+                style={styles.loader}
             />
 
+            {/* Footer */}
+            <View style={styles.seclastbox}>
+                <Text style={styles.seclasttext}>Powered BY HP Edit Enterprise</Text>
+            </View>
         </SafeAreaView>
-    )
-}
+    );
+};
+
 export default ScanerLoadingmainpage;
 
 const styles = StyleSheet.create({
     mainscaner: {
         flex: 1,
         backgroundColor: "#ffffff",
-        position: "relative"
+        position: "relative",
     },
-    genpage:{
-        marginTop: 20,
-        alignItems: "center"
+
+    genpage: {
+        marginTop: 25,
+        alignItems: "center",
     },
-    gentext:{
-        fontSize: 20,
-        fontWeight: "600",
-        lineHeight: 30,
+
+    gentext: {
+        fontSize: 22,
+        fontWeight: "700",
         textAlign: "center",
+        color: "#222",
         letterSpacing: 0.5,
-    }
-})
+    },
+
+    loader: {
+        width: 260,
+        height: 260,
+        alignSelf: "center",
+        marginTop: 60,   // SAME visual position, cleaner value
+    },
+
+    seclastbox: {
+        position: "absolute",
+        bottom: 20,
+        width: "100%",
+        alignItems: "center",
+    },
+
+    seclasttext: {
+        fontSize: 14,
+        fontWeight: "500",
+        color: "#555",
+    },
+});
