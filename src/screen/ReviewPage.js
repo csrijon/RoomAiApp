@@ -4,7 +4,7 @@ import ExtractedDetails from "../components/ExtractedDetails.js"
 import SecendHeader from "../components/SecendHeader.js"
 
 
-const ReviewPage = () => {
+const ReviewPage = ({navigation}) => {
     return (
         <SafeAreaView style={styles.reviewsection}  >
             <SecendHeader />
@@ -15,7 +15,7 @@ const ReviewPage = () => {
 
             <ExtractedDetails />
 
-            <TouchableOpacity style={styles.button} >
+            <TouchableOpacity onPress={()=>navigation.navigate("ScanerLoadingmainpage")} style={styles.button} >
                 <Text style={styles.btntext} >Confirm & Proceed</Text>
             </TouchableOpacity>
         </SafeAreaView>

@@ -43,7 +43,7 @@ const plans = [
 const Subscrption = () => {
   return (
     <SafeAreaView style={styles.Subcontainer}>
-      <StatusBar barStyle="dark-content" backgroundColor="#edeaeaff" />
+      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <ScrollView vertical showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
         <Header />
 

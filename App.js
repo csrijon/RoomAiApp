@@ -9,7 +9,7 @@ import Roomsence from "./src/screen/Roomsence"
 import Tellmeus from "./src/screen/Tellmeus"
 import ReviewPage from "./src/screen/ReviewPage.js"
 // import ParttwoScaner from "./src/screen/ParttwoScaner.js"
-import ScanerLoader from "./src/screen/ScanerLoadingmainpage.js"
+import ScanerLoadingmainpage from "./src/screen/ScanerLoadingmainpage.js"
 import LoginScreen from "./src/screen/LoginScreen.js"
 import SignUpScreen from "./src/screen/SignUpScreen.js"
 import SetNewPassword from "./src/screen/SetNewPassword.js"
@@ -49,6 +49,7 @@ const Stacksscreen = () => {
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
        <Stack.Screen name="Tellmeus" component={Tellmeus} />
        <Stack.Screen name="ReviewPage" component={ReviewPage} />
+       <Stack.Screen name="ScanerLoadingmainpage" component={ScanerLoadingmainpage} />
     </Stack.Navigator>
   );
 };
