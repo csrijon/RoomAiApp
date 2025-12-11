@@ -15,7 +15,7 @@ const ScanerLoadingmainpage = () => {
 
             {/* Loader */}
             <LottieView
-                source={require("../images/secloader.json")}
+                source={require("../images/mainloader.json")}
                 autoPlay
                 loop
                 style={styles.loader}
