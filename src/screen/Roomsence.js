@@ -1,51 +1,51 @@
 import React from "react";
-import { View, Text, Image, StyleSheet,FlatList } from "react-native";
+import { View, Text, Image, StyleSheet, FlatList, StatusBar } from "react-native";
 import Icon from "../components/Icon.js"
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const previewImages = [
-    { id: 1, img: require("../images/firstroom1.jpg") },
-    { id: 2, img: require("../images/secend2.jpg") },
-    { id: 3, img: require("../images/3rd3.jpg") },
+  { id: 1, img: require("../images/firstroom1.jpg") },
+  { id: 2, img: require("../images/secend2.jpg") },
+  { id: 3, img: require("../images/3rd3.jpg") },
 ];
 
-const Roomsence = ({navigation}
+const Roomsence = ({ navigation }
 ) => {
-    return (
-        <SafeAreaView style={styles.containers}>
+  return (
+    <SafeAreaView style={styles.containers}>
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+      {/* Logo */}
+      <Image
+        source={require("../images/logoweb.png")}
+        style={styles.logo}
+      />
 
-            {/* Logo */}
-            <Image
-                source={require("../images/logoweb.png")}
-                style={styles.logo}
-            />
+      {/* Title */}
+      <Text style={styles.title}>RoomAI Designer</Text>
+      <Text style={styles.subtitle}>Statements By Stellar Furnishings</Text>
 
-            {/* Title */}
-            <Text style={styles.title}>RoomAI Designer</Text>
-            <Text style={styles.subtitle}>Statements By Stellar Furnishings</Text>
+      {/* AI Label */}
+      <View style={styles.aiTag}>
+        <Text style={styles.aiTagText}>AI-Powered{"\n"}Interior Design</Text>
+      </View>
 
-            {/* AI Label */}
-            <View style={styles.aiTag}>
-                <Text style={styles.aiTagText}>AI-Powered{"\n"}Interior Design</Text>
-            </View>
+      {/* Preview Cards */}
+      <FlatList
+        horizontal
+        data={previewImages}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <Image source={item.img} style={styles.previewCard} />
+        )}
+        contentContainerStyle={{ paddingHorizontal: 10 }}
+        showsHorizontalScrollIndicator={false}
+        style={{ marginTop: 20 }}
+      />
 
-            {/* Preview Cards */}
-            <FlatList
-                horizontal
-                data={previewImages}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <Image source={item.img} style={styles.previewCard} />
-                )}
-                contentContainerStyle={{ paddingHorizontal: 10 }}
-                showsHorizontalScrollIndicator={false}
-                style={{ marginTop: 20 }}
-            />
-
-       <Icon navigation={navigation} />
-        </SafeAreaView>
-    )
+      <Icon navigation={navigation} />
+    </SafeAreaView>
+  )
 }
 
 export default Roomsence
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#777",
     marginBottom: 10,
-    zIndex:111111
+    zIndex: 111111
   },
 
   aiTag: {
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     height: 260,
     borderRadius: 16,
     marginRight: 12,
-    marginTop:30
+    marginTop: 30
   },
 
   tapText: {
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   featuresRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems:"center",
+    alignItems: "center",
     width: "88%",
     // marginTop: 80,
   },

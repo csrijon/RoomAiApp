@@ -1,9 +1,14 @@
 import { SafeAreaView } from "react-native-safe-area-context";
+import  React,{ useEffect } from "react";
 import SecendHeader from "../components/SecendHeader.js";
 import LottieView from "lottie-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
 const ScanerLoadingmainpage = () => {
+
+    useEffect(()=>{
+        
+    })
     return (
         <SafeAreaView style={styles.mainscaner}>
             <SecendHeader />

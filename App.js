@@ -16,7 +16,8 @@ import SetNewPassword from "./src/screen/SetNewPassword.js"
 import PasswordReset from "./src/screen/PasswordReset.js"
 import Forgetpage from "./src/screen/Forgetpage.js"
 import CheckyourEmail from "./src/screen/CheckyourEmail.js"
-import Mainscanerpage from "./src/screen/MainScanerpage.js"
+// import Mainscanerpage from "./src/screen/MainScanerpage.js"
+// import RoomScanScreen from "./src/screen/"
 import Launchpage from "./src/screen/Launchpage.js"
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -50,6 +51,7 @@ const Stacksscreen = () => {
        <Stack.Screen name="Tellmeus" component={Tellmeus} />
        <Stack.Screen name="ReviewPage" component={ReviewPage} />
        <Stack.Screen name="ScanerLoadingmainpage" component={ScanerLoadingmainpage} />
+
     </Stack.Navigator>
   );
 };

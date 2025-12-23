@@ -13,7 +13,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 const SignUpScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-    <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
+    <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
       {/* Title */}
       <Text style={styles.title}>Create an account</Text>
 

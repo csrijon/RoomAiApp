@@ -6,6 +6,7 @@ const Mainscanerpage = () => {
   return (
     <SafeAreaView style={styles.showingCameracontainer} >
       <ThirdHeader />
+      
     </SafeAreaView>
   )
 }
