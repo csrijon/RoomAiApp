@@ -1,5 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { View, Text, } from "react-native";
 
 import Roomsection from "./src/screen/Roomsection.js"
 import HomePage from "./src/screen/HomePage.js"
@@ -16,6 +14,7 @@ import SetNewPassword from "./src/screen/SetNewPassword.js"
 import PasswordReset from "./src/screen/PasswordReset.js"
 import Forgetpage from "./src/screen/Forgetpage.js"
 import CheckyourEmail from "./src/screen/CheckyourEmail.js"
+import ScanCamera from "./src/screen/ScanCamera.js"
 // import Mainscanerpage from "./src/screen/MainScanerpage.js"
 // import RoomScanScreen from "./src/screen/"
 import Launchpage from "./src/screen/Launchpage.js"
@@ -48,10 +47,10 @@ const Stacksscreen = () => {
       <Stack.Screen name="SetNewPassword" component={SetNewPassword} />
       <Stack.Screen options={{ animation: "ios_from_left", animationDuration: 500 }} name="DrawerScreen" component={DrawerScreen} />
       <Stack.Screen name="TabsScreen" component={TabsScreen} />
-       <Stack.Screen name="Tellmeus" component={Tellmeus} />
-       <Stack.Screen name="ReviewPage" component={ReviewPage} />
-       <Stack.Screen name="ScanerLoadingmainpage" component={ScanerLoadingmainpage} />
-
+      <Stack.Screen name="Tellmeus" component={Tellmeus} />
+      <Stack.Screen name="ReviewPage" component={ReviewPage} />
+      <Stack.Screen name="ScanerLoadingmainpage" component={ScanerLoadingmainpage} />
+      <Stack.Screen name="ScanCamera" component={ScanCamera}/>
     </Stack.Navigator>
   );
 };
@@ -110,7 +109,7 @@ const TabsScreen = () => {
       <Tab.Screen
         options={{
           tabBarIcon: ({ color, size }) => (
- <MaterialIcons name="workspace-premium" size={size} color={color} />
+            <MaterialIcons name="workspace-premium" size={size} color={color} />
 
           ),
           tabBarActiveTintColor: "#648DDB",

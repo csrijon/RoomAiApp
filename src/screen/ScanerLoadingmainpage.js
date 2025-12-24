@@ -1,13 +1,17 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import  React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import SecendHeader from "../components/SecendHeader.js";
 import LottieView from "lottie-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
-const ScanerLoadingmainpage = () => {
+const ScanerLoadingmainpage = ({ navigation }) => {
 
-    useEffect(()=>{
-        
+    useEffect(() => {
+        setTimeout(() => {
+            console.log("screen is loaded")
+            navigation.replace("ScanCamera")
+        }, 2000)
+        clearTimeout()
     })
     return (
         <SafeAreaView style={styles.mainscaner}>
