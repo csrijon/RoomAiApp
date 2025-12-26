@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   View,
@@ -31,6 +31,18 @@ const SignUpScreen = ({ navigation }) => {
   const onconfirmpass = (text) => {
     setconfirmpass(text)
   }
+
+  useEffect(() => {
+    const response = fetch("http://localhost:3000/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+
+    )
+  })
 
   return (
     <SafeAreaView style={styles.container}>
