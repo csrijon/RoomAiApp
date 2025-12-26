@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context"
-import { View, TouchableOpacity, StyleSheet, Text,StatusBar } from "react-native"
+import { View, TouchableOpacity, StyleSheet, Text, StatusBar } from "react-native"
 import ThirdHeader from "../components/ThirdHeader.js"
 
 import { Camera, useCameraPermission, useCameraDevice } from "react-native-vision-camera"
@@ -7,13 +7,13 @@ import { Camera, useCameraPermission, useCameraDevice } from "react-native-visio
 
 const ScanCamera = () => {
     const device = useCameraDevice("back")
-    const { hasPermission,requestPermission } = useCameraPermission()
+    const { hasPermission, requestPermission } = useCameraPermission()
 
 
     if (!hasPermission) {
         return (
             <SafeAreaView style={Styles.permissionContainer}>
-                
+
                 <View style={Styles.permissionBox}>
                     <Text style={Styles.permissionTitle}>
                         Camera Access Needed
@@ -24,7 +24,7 @@ const ScanCamera = () => {
                     </Text>
 
                     <TouchableOpacity
-                    onPress={requestPermission}
+                        onPress={requestPermission}
                         style={Styles.allowBtn}
                     >
                         <Text style={Styles.allowText}>Allow</Text>
@@ -43,7 +43,6 @@ const ScanCamera = () => {
 
         )
     }
-
 
     return (
         <SafeAreaView style={Styles.maincontainer} >
@@ -81,12 +80,11 @@ const Styles = StyleSheet.create({
     },
     buttoncontainer: {
         position: "absolute",
-        bottom: 40,
+        bottom: 20,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
     },
-
     button: {
         width: 80,
         height: 80,
@@ -95,14 +93,10 @@ const Styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         zIndex: 111111111,
-
-        // shadow for iOS
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.3,
         shadowRadius: 5,
-
-        // elevation for Android
         elevation: 8,
     },
 
