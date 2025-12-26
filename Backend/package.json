@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Srijon Chowdhury",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
