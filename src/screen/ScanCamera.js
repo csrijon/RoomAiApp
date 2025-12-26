@@ -61,7 +61,7 @@ const ScanCamera = () => {
             {/* </View> */}
             <View style={Styles.buttoncontainer} >
                 <TouchableOpacity style={Styles.button} >
-                    <Text>Capture</Text>
+                    <Text style={Styles.buttonText} >Capture</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
@@ -89,7 +89,7 @@ const Styles = StyleSheet.create({
         width: 80,
         height: 80,
         borderRadius: 40,
-        backgroundColor: "#40dc1dff",
+        backgroundColor: "#648DDB",
         alignItems: "center",
         justifyContent: "center",
         zIndex: 111111111,

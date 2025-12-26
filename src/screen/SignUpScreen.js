@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   View,
@@ -11,9 +11,26 @@ import {
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const SignUpScreen = ({ navigation }) => {
+
+  const [password, showpassword] = useState(true)
+  const [enterpass, updateenterpass] = useState(true)
+  const [name, updatename] = useState("")
+  const [email, setemail] = useState("")
+  const [userpass, setuserpass] = useState("")
+
+  const onchangename = (text) => {
+    updatename(text)
+  }
+  const onchangeemail = (text) => {
+    setemail(text)
+  }
+  const onchangeuserpass = (text) => {
+    setuserpass(text)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-    <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
+      <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
       {/* Title */}
       <Text style={styles.title}>Create an account</Text>
 
@@ -29,6 +46,8 @@ const SignUpScreen = ({ navigation }) => {
           style={styles.input}
           placeholder="Enter your full name"
           placeholderTextColor="#B3B3B3"
+          onChangeText={onchangename}
+          value={name}
         />
       </View>
 
@@ -40,6 +59,8 @@ const SignUpScreen = ({ navigation }) => {
           placeholder="Enter your email"
           placeholderTextColor="#B3B3B3"
           keyboardType="email-address"
+          value={email}
+          onChangeText={onchangeemail}
         />
       </View>
 
@@ -50,9 +71,11 @@ const SignUpScreen = ({ navigation }) => {
           style={styles.input}
           placeholder="Create a password"
           placeholderTextColor="#B3B3B3"
-          secureTextEntry={true}
+          secureTextEntry={password ? true : false}
+          value={userpass}
+          onChangeText={onchangeuserpass}
         />
-        <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+        <TouchableOpacity onPress={() => showpassword(!password)}  > <MaterialIcons name={password ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" /></TouchableOpacity>
       </View>
 
       {/* Confirm Password */}
@@ -62,13 +85,13 @@ const SignUpScreen = ({ navigation }) => {
           style={styles.input}
           placeholder="Re-enter your password"
           placeholderTextColor="#B3B3B3"
-          secureTextEntry={true}
+          secureTextEntry={enterpass ? true : false}
         />
-        <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+        <TouchableOpacity onPress={() => updateenterpass(!enterpass)}><MaterialIcons name={enterpass ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" /></TouchableOpacity>
       </View>
 
       {/* Create Account Button */}
-      <TouchableOpacity  style={styles.createBtn}>
+      <TouchableOpacity style={styles.createBtn}>
         <Text style={styles.createText}>Create Account</Text>
       </TouchableOpacity>
 
