@@ -17,6 +17,7 @@ const SignUpScreen = ({ navigation }) => {
   const [name, updatename] = useState("")
   const [email, setemail] = useState("")
   const [userpass, setuserpass] = useState("")
+  const [confirmpass, setconfirmpass] = useState("")
 
   const onchangename = (text) => {
     updatename(text)
@@ -26,6 +27,9 @@ const SignUpScreen = ({ navigation }) => {
   }
   const onchangeuserpass = (text) => {
     setuserpass(text)
+  }
+  const onconfirmpass = (text) => {
+    setconfirmpass(text)
   }
 
   return (
@@ -86,12 +90,16 @@ const SignUpScreen = ({ navigation }) => {
           placeholder="Re-enter your password"
           placeholderTextColor="#B3B3B3"
           secureTextEntry={enterpass ? true : false}
+          onChangeText={onconfirmpass}
+          value={confirmpass}
         />
         <TouchableOpacity onPress={() => updateenterpass(!enterpass)}><MaterialIcons name={enterpass ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" /></TouchableOpacity>
       </View>
 
       {/* Create Account Button */}
-      <TouchableOpacity style={styles.createBtn}>
+      <TouchableOpacity style={[styles.createBtn, {
+        backgroundColor: name && email && userpass && confirmpass ? "#648DDB" : "#c55050ff"
+      }]}>
         <Text style={styles.createText}>Create Account</Text>
       </TouchableOpacity>
 
@@ -158,7 +166,7 @@ const styles = StyleSheet.create({
   },
 
   createBtn: {
-    backgroundColor: "#648DDB",
+    // backgroundColor: "#648DDB",
     paddingVertical: 15,
     borderRadius: 12,
     alignItems: "center",
