@@ -32,17 +32,26 @@ const SignUpScreen = ({ navigation }) => {
     setconfirmpass(text)
   }
 
-  useEffect(() => {
-    const response = fetch("http://localhost:3000/",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }
-
-    )
-  })
+    const createaccout=async()=>{
+       try{
+        const response= await fetch("http://10.140.20.241:3000/signup",{
+            method:"POST",
+            headers:{
+              "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+              fullname:name,
+              usermail:email,
+              signuppass:userpass
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+       }catch(error){
+       console.error("hey server is not running")
+       }
+    }
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -109,7 +118,8 @@ const SignUpScreen = ({ navigation }) => {
       </View>
 
       {/* Create Account Button */}
-      <TouchableOpacity style={[styles.createBtn, {
+      
+      <TouchableOpacity onPress={createaccout} style={[styles.createBtn, {
         backgroundColor: name && email && userpass && confirmpass ? "#648DDB" : "#c55050ff"
       }]}>
         <Text style={styles.createText}>Create Account</Text>
