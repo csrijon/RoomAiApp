@@ -67,7 +67,7 @@ const SignUpScreen = ({ navigation }) => {
         return
       }
       console.log(data)
-      navigation.replace("DrawerScreen");
+      navigation.replace("LoginScreen");
 
     } catch (error) {
       console.error("hey server is not running")
