@@ -21,6 +21,7 @@ const SignUpScreen = ({ navigation }) => {
 
   const onchangename = (text) => {
     updatename(text)
+    console.log(text)
   }
   const onchangeemail = (text) => {
     setemail(text)
@@ -32,26 +33,47 @@ const SignUpScreen = ({ navigation }) => {
     setconfirmpass(text)
   }
 
-    const createaccout=async()=>{
-       try{
-        const response= await fetch("http://10.140.20.241:3000/signup",{
-            method:"POST",
-            headers:{
-              "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-              fullname:name,
-              usermail:email,
-              signuppass:userpass
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-       }catch(error){
-       console.error("hey server is not running")
-       }
+  const createaccout = async () => {
+    if (!userpass.trim() || !confirmpass.trim()) {
+      console.log("password can not empty")
+      return
     }
-  
+    //   if (userpass !== confirmpass) {
+    //   console.log("password not same")
+    // }
+    if (userpass.length < 6) {
+      console.log("you can write 6 letter")
+      return
+    }
+    if (userpass !== confirmpass){
+      console.log("password not match")
+      return
+    }
+    try {
+      const response = await fetch("http://10.140.20.241:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullname: name,
+          usermail: email,
+          signuppass: userpass
+        })
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        console.log("data is missing")
+        return
+      }
+      console.log(data)
+      navigation.replace("DrawerScreen");
+
+    } catch (error) {
+      console.error("hey server is not running")
+    }
+  }
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -118,7 +140,7 @@ const SignUpScreen = ({ navigation }) => {
       </View>
 
       {/* Create Account Button */}
-      
+
       <TouchableOpacity onPress={createaccout} style={[styles.createBtn, {
         backgroundColor: name && email && userpass && confirmpass ? "#648DDB" : "#c55050ff"
       }]}>
