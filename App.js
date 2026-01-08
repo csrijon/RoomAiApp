@@ -140,15 +140,6 @@ const DrawerScreen = () => {
   )
 }
 
-// const TopTabScreen = () => {
-//   return (
-//     <TopTab.Navigator>
-//       <TopTab.Screen name="Login" component={LoginScreen}/>
-//       <TopTab.Screen name="SignUp" component={SignUpScreen}/>
-//     </TopTab.Navigator>
-//   )
-// }
-
 const App = () => {
 
   return (
