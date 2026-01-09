@@ -50,7 +50,7 @@ const SignUpScreen = ({ navigation }) => {
       return
     }
     try {
-      const response = await fetch("http://10.140.20.241:3000/signup", {
+      const response = await fetch("http://10.140.22.17:3000/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
