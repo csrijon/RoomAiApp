@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  StatusBar
+  StatusBar, Alert
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
@@ -42,8 +42,9 @@ const SignUpScreen = ({ navigation }) => {
       console.log("you can write 6 letter")
       return
     }
-    if (userpass !== confirmpass){
-      console.log("password not match")
+    if (userpass !== confirmpass) {
+      // console.log("password not match")
+      Alert.alert("Error", "Password not match")
       return
     }
     try {

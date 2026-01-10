@@ -10,7 +10,7 @@ const Forgetpage = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
-      <TouchableOpacity style={styles.backButton} >
+      <TouchableOpacity onPress={()=>navigation.goBack()} style={styles.backButton} >
         <MaterialIcons name="chevron-left" size={29} color="#000" />
       </TouchableOpacity>
       {/* Title */}

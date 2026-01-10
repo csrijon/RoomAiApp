@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
   View,
@@ -14,9 +14,50 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 
 const LoginScreen = ({ navigation }) => {
+
+  const [logemail, setlogemail] = useState("")
+  const [logpassword, setlogpassword] = useState("")
+  const [logincolor, setlogcolor] = useState(false)
+  const [loginerror, setlogerror] = useState(false)
+
+  const onchangeemail = (text) => {
+    setlogemail(text)
+    console.log(text)
+  }
+  const onchangepassword = (text) => {
+    setlogpassword(text)
+    console.log(text)
+  }
+
+  const loggedin = async () => {
+    try {
+      const response = await fetch("http://10.140.22.17:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          usermail: logemail,
+          loginpass: logpassword
+        })
+      })
+      const data = await response.json()
+      console.log(data)
+      if (!response.ok) {
+        console.log("login failed")
+        setlogcolor(true)
+        setlogerror(true)
+        return
+      }
+      navigation.replace("TabsScreen")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-        <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
+      <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
       {/* Email Label */}
       <Text style={styles.label}>Your Email</Text>
 
@@ -24,9 +65,14 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.inputRow}>
         <TextInput
           style={styles.input}
-          placeholder="csrijon92@gmail.com"
+          placeholder="youmail@gmail.com"
           placeholderTextColor="#B3B3B3"
           keyboardType="email-address"
+          value={logemail}
+          onChangeText={onchangeemail}
+          autoCorrect={false}
+          autoCapitalize="none"
+
         />
       </View>
 
@@ -40,21 +86,23 @@ const LoginScreen = ({ navigation }) => {
           placeholder="Enter your password"
           placeholderTextColor="#B3B3B3"
           secureTextEntry={true}
+          value={logpassword}
+          onChangeText={onchangepassword}
         />
         <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
       </View>
 
       {/* Wrong Password + Forgot */}
       <View style={styles.rowBetween}>
-        <Text style={styles.errorText}>Wrong password</Text>
+        <Text style={[styles.errorText, { color: logincolor ? "#d21010" : "#D9D9D9" }]}>{loginerror ? "Wrong password" : ""}</Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate("Forgetpage")} >
           <Text style={styles.forgotText}>Forgot password?</Text>
         </TouchableOpacity>
       </View>
 
       {/* Continue Button */}
-      <TouchableOpacity onPress={()=>navigation.navigate("DrawerScreen")} style={styles.continueBtn}>
+      <TouchableOpacity onPress={loggedin} style={[styles.continueBtn, { backgroundColor: logemail && logpassword ? "#648DDB" : "#c55050ff" }]}>
         <Text style={styles.continueText}>Continue</Text>
       </TouchableOpacity>
 
@@ -74,14 +122,14 @@ const LoginScreen = ({ navigation }) => {
       {/* Login with Google */}
       <TouchableOpacity style={styles.socialBtn}>
         {/* <FontAwesome name="google" size={22} color="#DB4437" /> */}
-        <Image style={{width:24,height:24}} source={require("../images/gogolelogo.png")} />
+        <Image style={{ width: 24, height: 24 }} source={require("../images/gogolelogo.png")} />
         <Text style={styles.socialText}>Login with Google</Text>
       </TouchableOpacity>
 
       {/* Sign Up */}
       <View style={styles.signupContainer}>
         <Text style={styles.signupText}>Don’t have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")}>
           <Text style={styles.signupLink}> Sign up</Text>
         </TouchableOpacity>
       </View>
