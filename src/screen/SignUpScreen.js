@@ -38,9 +38,6 @@ const SignUpScreen = ({ navigation }) => {
       console.log("password can not empty")
       return
     }
-    //   if (userpass !== confirmpass) {
-    //   console.log("password not same")
-    // }
     if (userpass.length < 6) {
       console.log("you can write 6 letter")
       return
@@ -62,6 +59,7 @@ const SignUpScreen = ({ navigation }) => {
         })
       })
       const data = await response.json()
+      console.log(data)
       if (!response.ok) {
         console.log("data is missing")
         return
