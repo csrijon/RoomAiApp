@@ -7,6 +7,31 @@ const Forgetpage = ({ navigation }) => {
 
   const [text, setText] = useState("");
 
+
+  const otochecker = async ()=>{
+    try {
+      let response = await fetch("http://192.168.29.19:3000/optchecker",{
+        method: "POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          usermail: text
+        })
+        
+      })
+      let data = await response.json();
+      console.log(data)
+      if(!response.ok){
+        console.log("email not registered")
+        return
+      }
+      navigation.navigate("CheckyourEmail")
+    } catch (error) {
+      console.log("error", error)
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
@@ -38,8 +63,8 @@ const Forgetpage = ({ navigation }) => {
 
       {/* Button */}
       <TouchableOpacity
-        style={[styles.button, text === "" ? { backgroundColor: "#C9D9F8" } : { backgroundColor: "#648DDB" }]}
-        onPress={text === "" ? {} : () => { navigation.navigate("CheckyourEmail") }}
+        style={[styles.button, text === "" ? { backgroundColor: "#c55050ff" } : { backgroundColor: "#648DDB" }]}
+        onPress={text === "" ? {} : () => otochecker()}
       >
         <Text style={styles.buttonText}>Reset Password</Text>
       </TouchableOpacity>

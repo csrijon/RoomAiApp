@@ -19,6 +19,7 @@ const LoginScreen = ({ navigation }) => {
   const [logpassword, setlogpassword] = useState("")
   const [logincolor, setlogcolor] = useState(false)
   const [loginerror, setlogerror] = useState(false)
+  const [hidepass, sethidepass] = useState(true)
 
   const onchangeemail = (text) => {
     setlogemail(text)
@@ -31,7 +32,7 @@ const LoginScreen = ({ navigation }) => {
 
   const loggedin = async () => {
     try {
-      const response = await fetch("http://10.140.22.17:3000/login", {
+      const response = await fetch("http://192.168.29.19:3000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -85,11 +86,11 @@ const LoginScreen = ({ navigation }) => {
           style={styles.input}
           placeholder="Enter your password"
           placeholderTextColor="#B3B3B3"
-          secureTextEntry={true}
+          secureTextEntry={hidepass ? true : false}
           value={logpassword}
           onChangeText={onchangepassword}
         />
-        <MaterialIcons name="visibility-off" size={22} color="#B3B3B3" />
+        <MaterialIcons onPress={()=>sethidepass(!hidepass)} name={hidepass ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" />
       </View>
 
       {/* Wrong Password + Forgot */}
