@@ -26,7 +26,10 @@ const Forgetpage = ({ navigation }) => {
         console.log("email not registered")
         return
       }
-      navigation.navigate("CheckyourEmail")
+      navigation.navigate("CheckyourEmail",{
+        usermail: data.usermail,
+        otp: data.otp
+      })
     } catch (error) {
       console.log("error", error)
     }

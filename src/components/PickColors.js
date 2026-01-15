@@ -20,7 +20,7 @@ const PickColors = ({ navigation }) => {
 
       {/* Title */}
       <Text style={styles.title}>Pick colors & materials</Text>
-      <ScrollView horizontal style={{ flexDirection: "row" }} >
+      <ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ flexDirection: "row" }} >
         {/* Color Row */}
         <View style={styles.colorRow}>
           {colors.map((c, index) => (

@@ -11,7 +11,10 @@ import {
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const CheckyourEmail = ({ navigation }) => {
+const CheckyourEmail = ({ navigation,route }) => {
+
+    const {usermail,otp} = route.params;
+    
 
     const [code, setCode] = useState(["", "", "", "", ""]);
 
@@ -43,11 +46,12 @@ const CheckyourEmail = ({ navigation }) => {
 
             {/* Description */}
             <Text style={styles.description}>
-                We sent a reset link to <Text style={styles.bold}>contact@dscode…com</Text>
+                We sent a reset link to <Text style={styles.bold}>{usermail}</Text>
             </Text>
 
             <Text style={styles.subDescription}>
-                enter 5 digit code that mentioned in the email
+                {/* enter 5 digit code that mentioned in the email */}
+                {otp} is your OTP code
             </Text>
 
             {/* 5 Code Boxes */}

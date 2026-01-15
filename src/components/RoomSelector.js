@@ -9,7 +9,7 @@ const Rooms = [
 
 const RoomSelector = () => {
     return (
-        <ScrollView horizontal style={styles.row}>
+        <ScrollView  showsHorizontalScrollIndicator={false} horizontal style={styles.row}>
             {Rooms.map(room => (
                 <NewCardGen
                     key={room.id}
