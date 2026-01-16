@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, TextInput, TouchableOpacity, StyleSheet, StatusBar} from "react-native";
+import LottieView from "lottie-react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const Forgetpage = ({ navigation }) => {
 
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
 
 
   const otochecker = async ()=>{
     try {
-      let response = await fetch("http://10.140.22.17:3000/optchecker",{
+      setLoading(true)
+      let response = await fetch("http://10.140.22.17:3000/otpsender",{
         method: "POST",
         headers:{
           "Content-Type":"application/json"
@@ -27,9 +30,9 @@ const Forgetpage = ({ navigation }) => {
         return
       }
       navigation.navigate("CheckyourEmail",{
-        usermail: data.usermail,
-        otp: data.otp
+        usermail: data.usermail
       })
+      setLoading(false)
     } catch (error) {
       console.log("error", error)
     }
@@ -71,6 +74,13 @@ const Forgetpage = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Reset Password</Text>
       </TouchableOpacity>
+    {loading && <LottieView 
+        source ={require("../images/secend loader.json")}
+        autoPlay
+        loop
+        style={{width:400,height:400,alignSelf:"center",zIndex:100000,position:"absolute",top:170,left:0,right:0,bottom:0}}
+       />}
+        
     </SafeAreaView>
   );
 };

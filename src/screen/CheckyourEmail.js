@@ -13,7 +13,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const CheckyourEmail = ({ navigation,route }) => {
 
-    const {usermail,otp} = route.params;
+    const {usermail} = route.params;
     
 
     const [code, setCode] = useState(["", "", "", "", ""]);
@@ -29,6 +29,29 @@ const CheckyourEmail = ({ navigation,route }) => {
         return code.every((item) => item !== "");
     };
 
+    const sendotpverification =async()=>{
+         try {
+            let response= await fetch("http://10.140.22.17:3000/otpchecker",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    usermail: usermail,
+                    otp:code.join("")
+                })
+            })
+            let data = await response.json();
+            console.log(data)
+            if(!response.ok){
+                return
+            }
+            navigation.navigate("PasswordReset")
+
+         } catch (error) {
+            console.log("error", error)
+         }
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -46,12 +69,12 @@ const CheckyourEmail = ({ navigation,route }) => {
 
             {/* Description */}
             <Text style={styles.description}>
-                We sent a reset link to <Text style={styles.bold}>{usermail}</Text>
+                We sent an OTP <Text style={styles.bold}>{usermail}</Text>
             </Text>
 
             <Text style={styles.subDescription}>
                 {/* enter 5 digit code that mentioned in the email */}
-                {otp} is your OTP code
+                 is Mail.
             </Text>
 
             {/* 5 Code Boxes */}
@@ -72,11 +95,7 @@ const CheckyourEmail = ({ navigation,route }) => {
             {/* Verify Button */}
             <TouchableOpacity
                 style={[styles.verifyBtn, buttonhandeler() ? { backgroundColor: "#648DDB" } : { backgroundColor: "#C9D9F8" }]}
-                onPress={() => {
-                    if (buttonhandeler()) {
-                        navigation.navigate("PasswordReset");
-                    }
-                }}
+                onPress={()=>sendotpverification()}
 
             >
                 <Text style={styles.verifyText}>Verify Code</Text>
