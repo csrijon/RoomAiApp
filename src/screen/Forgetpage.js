@@ -10,7 +10,7 @@ const Forgetpage = ({ navigation }) => {
 
   const otochecker = async ()=>{
     try {
-      let response = await fetch("http://192.168.29.19:3000/optchecker",{
+      let response = await fetch("http://10.140.22.17:3000/optchecker",{
         method: "POST",
         headers:{
           "Content-Type":"application/json"
