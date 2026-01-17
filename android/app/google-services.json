@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "282609993383",
+    "project_id": "room-aiapp",
+    "storage_bucket": "room-aiapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282609993383:android:0ae26d1e4bd97be0afbd82",
+        "android_client_info": {
+          "package_name": "com.roomaiapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABO40AmUFCk3EvHyDs1l2gdupUBaUMJbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

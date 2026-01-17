@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+// import { GOOGLE_CLIENT_ID } from '@env';
 
 
 const LoginScreen = ({ navigation }) => {
@@ -29,6 +31,36 @@ const LoginScreen = ({ navigation }) => {
     setlogpassword(text)
     console.log(text)
   }
+  // GoogleSignin.configure({
+  //      webClientId:GOOGLE_CLIENT_ID,
+  // })
+
+  const GoogleSign = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+
+      const userInfo = await GoogleSignin.signIn();
+      console.log("Google User Info:", userInfo);
+      console.log("Google User:", userInfo.user);
+      console.log("ID Token:", userInfo.idToken);
+
+      navigation.replace("TabsScreen");
+
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log("User cancelled Google Sign-In");
+      }
+      else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log("Sign-in already in progress");
+      }
+      else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log("Play services not available");
+      }
+      else {
+        console.log("Google Sign-In error:", error);
+      }
+    }
+  };
 
   const loggedin = async () => {
     try {
@@ -90,14 +122,14 @@ const LoginScreen = ({ navigation }) => {
           value={logpassword}
           onChangeText={onchangepassword}
         />
-        <MaterialIcons onPress={()=>sethidepass(!hidepass)} name={hidepass ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" />
+        <MaterialIcons onPress={() => sethidepass(!hidepass)} name={hidepass ? "visibility-off" : "visibility"} size={22} color="#B3B3B3" />
       </View>
 
       {/* Wrong Password + Forgot */}
       <View style={styles.rowBetween}>
         <Text style={[styles.errorText, { color: logincolor ? "#d21010" : "#D9D9D9" }]}>{loginerror ? "Wrong password" : ""}</Text>
 
-        <TouchableOpacity onPress={()=>navigation.navigate("Forgetpage")} >
+        <TouchableOpacity onPress={() => navigation.navigate("Forgetpage")} >
           <Text style={styles.forgotText}>Forgot password?</Text>
         </TouchableOpacity>
       </View>
@@ -121,7 +153,9 @@ const LoginScreen = ({ navigation }) => {
       </TouchableOpacity>
 
       {/* Login with Google */}
-      <TouchableOpacity style={styles.socialBtn}>
+      <TouchableOpacity
+        onPress={() => GoogleSign()}
+        style={styles.socialBtn}>
         {/* <FontAwesome name="google" size={22} color="#DB4437" /> */}
         <Image style={{ width: 24, height: 24 }} source={require("../images/gogolelogo.png")} />
         <Text style={styles.socialText}>Login with Google</Text>
